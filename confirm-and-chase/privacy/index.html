@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Confirm &amp; Chase — Paperlatch</title>
+<meta name="description" content="What Confirm &amp; Chase stores, where it is stored, and who can reach it.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+    <a href="/confirm-and-chase/terms/">Terms</a>
+  </nav>
+</header>
+
+<h1>Privacy Policy</h1>
+<p class="updated">Confirm &amp; Chase for Confluence &middot; Last updated 22 September 2026</p>
+
+<div class="note">
+  <p>
+    <strong>The short version.</strong> The app runs on Atlassian Forge and stores its data
+    in Atlassian's own app storage, inside your Atlassian cloud site. We operate no server,
+    so no data about you or your users is transmitted to us or to any third party.
+  </p>
+</div>
+
+<h2>What the app stores</h2>
+<p>For each page where the macro is used, the app stores:</p>
+<table>
+  <thead><tr><th>Data</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>Atlassian account ID of the person who confirmed</td><td>To record who confirmed</td></tr>
+    <tr><td>The date and time of the confirmation, in UTC</td><td>To record when</td></tr>
+    <tr><td>The page ID and the policy version at that moment</td><td>To tie the confirmation to what was confirmed</td></tr>
+    <tr><td>The confirmation text chosen by the page author</td><td>To display the prompt</td></tr>
+    <tr><td>The ID and name of the Confluence group chosen as the audience</td><td>To work out who has not confirmed</td></tr>
+  </tbody>
+</table>
+<p>
+  Nothing else is stored. In particular the app does not store the content of your pages,
+  email addresses, IP addresses, or any usage analytics.
+</p>
+
+<h2>What the app reads but does not store</h2>
+<p>
+  To render the report, the app reads page titles, the public display names of users, and the
+  membership of the group you select as the audience. These are read at the moment the report
+  is opened and are not written to storage.
+</p>
+
+<h2>Where the data lives</h2>
+<p>
+  In Atlassian Forge app storage, within your own Atlassian cloud site and subject to the data
+  residency that applies to that site. The data never leaves Atlassian's infrastructure. We
+  have no facility to read it, export it, or connect to it.
+</p>
+
+<h2>Permissions the app requests</h2>
+<ul>
+  <li><code>read:page:confluence</code> — to show page titles in the report</li>
+  <li><code>read:user:confluence</code> — to show display names</li>
+  <li><code>read:group:confluence</code> — to determine the audience</li>
+  <li><code>read:confluence-user</code> — to identify the person confirming</li>
+  <li><code>storage:app</code> — to store the confirmations described above</li>
+</ul>
+<p>
+  The app requests <strong>no write permission</strong>, does not act on behalf of any user,
+  and does not request access to email addresses.
+</p>
+
+<h2>Retention and deletion</h2>
+<p>
+  Confirmations are kept for as long as the app is installed, because their purpose is to serve
+  as a durable record. When the app is uninstalled, Atlassian deletes the app's storage according
+  to its own retention schedule for Forge apps. Because the data is held in your site, a site
+  administrator may also remove it by removing the macro and uninstalling the app.
+</p>
+
+<h2>Your users' rights</h2>
+<p>
+  The stored personal data is an Atlassian account ID and a timestamp. As the operator of your
+  Confluence site you are the controller of that data. If a data subject asks you to erase their
+  confirmations, a site administrator can do so by uninstalling the app, which removes its storage.
+  We cannot act on such a request on your behalf, because we have no access to the data.
+</p>
+
+<h2>The Marketplace listing page</h2>
+<p>
+  The app's listing page on the Atlassian Marketplace is operated by Atlassian, not by us.
+  Atlassian permits partners to attach a Google Analytics measurement ID to their listing page,
+  and we do so in order to see how many people view the listing. That measurement applies only to
+  the Marketplace listing page — it is not present in the app itself and collects nothing from
+  inside your Confluence site.
+</p>
+
+<h2>Changes</h2>
+<p>
+  If this policy changes materially, the listing will be updated and the date at the top of this
+  page will change.
+</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:support@paperlatch.com">support@paperlatch.com</a></p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Home</a>
+  <a href="/confirm-and-chase/support/">Support</a>
+  <a href="/confirm-and-chase/terms/">Terms</a>
+</footer>
+
+</div>
+</body>
+</html>

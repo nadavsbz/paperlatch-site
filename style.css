@@ -1,0 +1,152 @@
+/* Paperlatch — the brand palette, the same tokens the app's report uses. */
+
+:root {
+  --ink: #253858;
+  --text: #172b4d;
+  --subtle: #5b6c8b;
+  --line: #dfe3ea;
+  --bg: #ffffff;
+  --sunken: #f7f8f9;
+  --link: #0c66e4;
+  --green: #22a06b;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, system-ui,
+    "Helvetica Neue", sans-serif;
+  --mono: ui-monospace, Menlo, "SF Mono", Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #b6c2cf;
+    --text: #c7d1dc;
+    --subtle: #9fadbc;
+    --line: #38414a;
+    --bg: #1f1f21;
+    --sunken: #282a2e;
+    --link: #579dff;
+    --green: #4bce97;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 16px 72px;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; }
+
+/* ---------- header ---------- */
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 0 40px;
+  flex-wrap: wrap;
+}
+header img { width: 36px; height: 36px; border-radius: 8px; display: block; }
+header .name {
+  font-weight: 650;
+  font-size: 18px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+header nav { margin-inline-start: auto; display: flex; gap: 18px; flex-wrap: wrap; }
+header nav a { font-size: 14px; color: var(--subtle); text-decoration: none; }
+header nav a:hover { color: var(--link); text-decoration: underline; }
+
+/* ---------- type ---------- */
+
+h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+h2 {
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  margin: 40px 0 10px;
+  color: var(--ink);
+}
+h3 { font-size: 16px; margin: 28px 0 6px; color: var(--ink); }
+p { margin: 0 0 16px; }
+a { color: var(--link); }
+ul, ol { margin: 0 0 16px; padding-inline-start: 22px; }
+li { margin-bottom: 6px; }
+strong { font-weight: 650; color: var(--ink); }
+code {
+  font-family: var(--mono);
+  font-size: 0.87em;
+  background: var(--sunken);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.updated { color: var(--subtle); font-size: 14px; margin: 0 0 36px; }
+.lead { font-size: 18px; color: var(--subtle); margin-bottom: 28px; }
+
+/* ---------- tables ---------- */
+
+table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 15px; }
+th {
+  text-align: start;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--subtle);
+  border-bottom: 2px solid var(--line);
+  padding: 8px 12px 8px 0;
+}
+td { border-bottom: 1px solid var(--line); padding: 10px 12px 10px 0; vertical-align: top; }
+
+/* ---------- blocks ---------- */
+
+.note {
+  background: var(--sunken);
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--green);
+  border-radius: 4px;
+  padding: 16px 18px;
+  margin: 0 0 24px;
+}
+.note p:last-child { margin-bottom: 0; }
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px 24px;
+  margin: 0 0 20px;
+  background: var(--sunken);
+}
+.card h3 { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--subtle);
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+footer a { color: var(--subtle); }
+
+@media (max-width: 560px) {
+  h1 { font-size: 25px; }
+  body { font-size: 15px; }
+  header { padding-bottom: 28px; }
+}

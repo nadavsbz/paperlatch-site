@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation and Support — Confirm &amp; Chase — Paperlatch</title>
+<meta name="description" content="How to set up Confirm &amp; Chase, answers to the questions that come up most often, and how to reach support.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+    <a href="/confirm-and-chase/terms/">Terms</a>
+  </nav>
+</header>
+
+<h1>Documentation and support</h1>
+<p class="updated">Confirm &amp; Chase for Confluence</p>
+
+<h2>Setting up</h2>
+<ol>
+  <li>Edit a Confluence page and add the <strong>Confirm &amp; Chase</strong> macro where you
+    want the confirmation to appear.</li>
+  <li>Select the macro and open its settings (the pencil in the toolbar above it).</li>
+  <li>Set the text readers will see, and pick the Confluence group that has to confirm.</li>
+  <li>Publish the page.</li>
+</ol>
+
+<p>There are two places to see the results:</p>
+<ul>
+  <li><strong>Apps &rarr; Policy compliance</strong> — every policy across the whole site, with
+    a summary of what is clear and what is outstanding. This is the view for whoever owns
+    compliance.</li>
+  <li><strong>The space sidebar, under Space apps</strong> — the same report, narrowed to that
+    space, for whoever owns a single space.</li>
+</ul>
+
+<p>
+  Picking a group is optional, but without one the report can only show who <em>did</em> confirm.
+  The list of who has <em>not</em> confirmed is what the group makes possible.
+</p>
+
+<h2>Asking everyone to confirm again</h2>
+<p>
+  When a policy changes, open the macro settings and choose
+  <strong>Save &amp; require everyone to confirm again</strong>.
+</p>
+<p>
+  This raises the policy version. Everyone is asked to confirm the new version, and the previous
+  round stays on record exactly as it was given. Both rounds appear in the CSV export, so you can
+  still show who accepted version 1 after version 2 has gone out.
+</p>
+
+<h2>The report</h2>
+<p>Opening a page in the report shows two tabs:</p>
+<ul>
+  <li><strong>Not confirmed</strong> — people in the audience who have not confirmed the current
+    version, and whether they confirmed an earlier one</li>
+  <li><strong>Confirmed</strong> — who confirmed, and when</li>
+</ul>
+<p>
+  <strong>Download CSV</strong> produces the full history: every person, every version, every
+  timestamp, including rounds that are no longer current. It is written with a byte order mark so
+  that Excel opens it as UTF-8.
+</p>
+
+<h2>Common questions</h2>
+
+<h3>Someone says they clicked, but the report shows them as not confirmed.</h3>
+<p>
+  Almost always this means they confirmed an earlier policy version. The report says so in the
+  Note column. If the policy version was raised, every reader has to confirm again.
+</p>
+
+<h3>My group shows as empty, or the count looks wrong.</h3>
+<p>
+  Confluence has several groups whose names look similar. Groups such as
+  <code>confluence-user-access-admins-…</code> control permissions and are often empty. Pick the
+  group that actually contains the people who have to read the page.
+</p>
+
+<h3>Why is the number smaller than the group size?</h3>
+<p>
+  Service accounts belonging to installed apps are members of some Confluence groups. They cannot
+  click a button, so the app leaves them out of the count. The report counts people.
+</p>
+
+<h3>Can I assign the page to individual people instead of a group?</h3>
+<p>
+  Not today. The audience is a Confluence group. If you need a specific set of people, create a
+  group containing them.
+</p>
+
+<h3>Can I set a deadline, or send reminder emails?</h3>
+<p>
+  No. The app shows you who is outstanding; chasing them is done however your organisation already
+  does it. If deadlines and automated reminders are a requirement, this is not the right app for
+  you, and it is better to know that before you install it.
+</p>
+
+<h3>I edited the page. Does everyone have to confirm again?</h3>
+<p>
+  No — not unless you say so. Editing a page does not reset confirmations, because most edits are
+  typos rather than policy changes. When a change is material, use
+  <strong>Save &amp; require everyone to confirm again</strong>.
+</p>
+
+<h3>Does it work in the Confluence mobile app?</h3>
+<p>
+  The confirmation button and the report are built for the browser. Confluence's mobile apps do not
+  render this kind of macro reliably. Use a desktop browser.
+</p>
+
+<h3>What happens to the confirmations if I uninstall?</h3>
+<p>
+  They are stored in Atlassian's app storage inside your site, and Atlassian deletes that storage
+  when the app is removed. Export the CSV first if you need to keep the record.
+</p>
+
+<h2>Support</h2>
+<p>
+  Email <a href="mailto:support@paperlatch.com">support@paperlatch.com</a> on business days.
+  We aim to reply within two business days.
+</p>
+<p>To get a useful answer in the first reply, include:</p>
+<ul>
+  <li>your Confluence site URL</li>
+  <li>the page where the problem appears</li>
+  <li>the name of the group you selected as the audience</li>
+  <li>what you expected to see and what you saw instead</li>
+  <li>a screenshot of the report, if the question is about a number</li>
+</ul>
+
+<h2>Security and privacy</h2>
+<p>
+  The app runs on Atlassian Forge. Its data stays in Atlassian's app storage inside your site, and
+  we operate no server. It requests read-only permissions and never asks to write to your content,
+  to act on a user's behalf, or to read email addresses. You can verify this yourself on the
+  <strong>Permissions</strong> tab of the Marketplace listing.
+</p>
+<p>See the <a href="/confirm-and-chase/privacy/">Privacy Policy</a> for exactly what is stored.</p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Home</a>
+  <a href="/confirm-and-chase/privacy/">Privacy</a>
+  <a href="/confirm-and-chase/terms/">Terms</a>
+</footer>
+
+</div>
+</body>
+</html>
