@@ -131,6 +131,22 @@ td { border-bottom: 1px solid var(--line); padding: 10px 12px 10px 0; vertical-a
 .card h3 { margin-top: 0; }
 .card p:last-child { margin-bottom: 0; }
 
+/* ---------- figures ---------- */
+
+figure { margin: 0 0 28px; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--subtle);
+}
+
 /* ---------- footer ---------- */
 
 footer {
