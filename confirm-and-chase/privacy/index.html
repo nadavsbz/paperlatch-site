@@ -78,8 +78,10 @@
   <li><code>storage:app</code> — to store the confirmations described above</li>
 </ul>
 <p>
-  The app requests <strong>no write permission</strong>, does not act on behalf of any user,
-  and does not request access to email addresses.
+  Four of those are read-only. <code>storage:app</code> is the one write capability, and it
+  reaches only the app's own storage described above. The app has
+  <strong>no permission to write to your Confluence content</strong>, does not act on behalf
+  of any user, and does not request access to email addresses.
 </p>
 
 <h2>Retention and deletion</h2>

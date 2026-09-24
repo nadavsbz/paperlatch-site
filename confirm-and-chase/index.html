@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Read Confirmation &amp; Policy Acknowledgement for Confluence — Confirm &amp; Chase</title>
-<meta name="description" content="Confirm &amp; Chase records who acknowledged each version of a Confluence policy, shows who still has to confirm, and exports the whole history as CSV. Runs on Forge, read-only permissions.">
+<meta name="description" content="Confirm &amp; Chase records who acknowledged each version of a Confluence policy, shows who still has to confirm, and exports the whole history as CSV. Runs on Forge; read-only access to your content.">
 <link rel="canonical" href="https://paperlatch.com/confirm-and-chase/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://paperlatch.com/confirm-and-chase/">
@@ -83,12 +83,22 @@
   timestamp, including the rounds that are no longer current.
 </p>
 
+<h2>A typo is not a new policy</h2>
+<p>
+  Editing a page does not reset anybody's confirmation. Most edits are a typo or a broken
+  link, and asking two hundred people to confirm again because of a comma is how a
+  compliance process stops being taken seriously. The document owner decides when a change
+  is material, and starts a new confirmation round deliberately.
+</p>
+
 <h2>Built to be easy for a security team to approve</h2>
 <ul>
   <li>Runs on Atlassian Forge, inside Atlassian</li>
   <li>No application server of ours, and no external storage of your page content</li>
-  <li>Five permissions, all read-only</li>
-  <li>No write access to your content, no acting on a user's behalf, no access to email addresses</li>
+  <li>Four read-only permissions, plus storage for the confirmations themselves &mdash;
+      the only thing it ever writes</li>
+  <li>No permission to write to your Confluence content, no acting on a user's behalf,
+      no access to email addresses</li>
   <li>No advertising or behavioural analytics inside the app</li>
 </ul>
 <p>
