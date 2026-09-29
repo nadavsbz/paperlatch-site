@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Policy — Paperlatch</title>
+<meta name="description" content="How Paperlatch apps are built, what they can reach, and how to report a vulnerability.">
+<link rel="canonical" href="https://paperlatch.com/security/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paperlatch.com/security/">
+<meta property="og:title" content="Security Policy — Paperlatch">
+<meta property="og:description" content="How Paperlatch apps are built, what they can reach, and how to report a vulnerability.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+    <a href="/confirm-and-chase/terms/">Terms</a>
+  </nav>
+</header>
+
+<h1>Security Policy</h1>
+<p class="updated">Paperlatch &middot; Last updated 29 September 2026</p>
+
+<div class="note">
+  <p>
+    <strong>The short version.</strong> Our apps run entirely on Atlassian Forge, inside the
+    customer's own Atlassian cloud site. We operate no server, hold no customer data, and make
+    no outbound network calls. That removes most of what a security policy usually has to
+    describe &mdash; and it is also why the parts below are short.
+  </p>
+</div>
+
+<h2>Reporting a vulnerability</h2>
+<p>
+  Email <a href="mailto:support@paperlatch.com">support@paperlatch.com</a> with the word
+  <em>security</em> in the subject line. Please include what you found, how to reproduce it, and
+  the app and version it affects.
+</p>
+<ul>
+  <li>We acknowledge a security report within <strong>two business days</strong>.</li>
+  <li>We aim to give an initial assessment, including whether we can reproduce it, within
+      <strong>five business days</strong>.</li>
+  <li>We will tell you when a fix ships, and we will credit you if you want to be credited.</li>
+</ul>
+<p>
+  Please do not test against another customer's Atlassian site, and do not access, modify or
+  retain anyone else's data. Report it to us instead and we will reproduce it ourselves. We
+  will not pursue a researcher who follows this policy in good faith.
+</p>
+<p>
+  Vulnerabilities in the Atlassian platform itself should go to
+  <a href="https://www.atlassian.com/trust/security/report-a-vulnerability">Atlassian</a> rather
+  than to us. If in doubt, send it to us and we will forward it.
+</p>
+
+<h2>What our apps can reach</h2>
+<p>
+  Each app declares the narrowest set of Forge scopes it needs, and the full list is published on
+  the Permissions tab of its Atlassian Marketplace listing. For
+  <a href="/confirm-and-chase/">Confirm &amp; Chase</a> that is four read scopes plus the app's
+  own storage.
+</p>
+<ul>
+  <li><strong>No write access to customer content.</strong> The apps cannot create, edit or
+      delete pages.</li>
+  <li><strong>No acting on behalf of a user.</strong> No <code>ACT_AS_USER</code>.</li>
+  <li><strong>No access to email addresses.</strong></li>
+  <li><strong>No external egress.</strong> The apps make no outbound HTTP requests, so there is
+      no third party to trust and no data to encrypt in transit to us.</li>
+</ul>
+
+<h2>Where data lives</h2>
+<p>
+  In Atlassian Forge hosted storage, within the customer's own Atlassian cloud site. Forge hosted
+  storage is data residency enabled: app data is pinned to the same location as the host product
+  and migrates with it. Encryption at rest and in transit, key management, and physical security
+  are Atlassian's, described in the
+  <a href="https://www.atlassian.com/trust">Atlassian Trust Center</a>.
+</p>
+<p>
+  We have no facility to read, export or connect to that data. This is a property of how the
+  apps are built, not a promise about how we behave.
+</p>
+
+<h2>How the apps are built</h2>
+<ul>
+  <li><strong>No secrets in the app.</strong> The apps hold no API tokens, passwords or shared
+      secrets, and never ask an end user for one.</li>
+  <li><strong>Dependencies.</strong> Runtime dependencies are kept to the Forge SDK and its own
+      requirements. Fewer dependencies is the control.</li>
+  <li><strong>Tests before release.</strong> Each release runs an automated suite that includes
+      the failure paths &mdash; partial reads, refused requests, permission errors &mdash;
+      because the rule the code is governed by is that missing, partial or unauthorised data
+      must never be presented as a valid result.</li>
+  <li><strong>Platform updates.</strong> Forge apps are updated for every customer at once. A
+      security fix does not wait for anyone to upgrade.</li>
+</ul>
+
+<h2>What we do not claim</h2>
+<p>
+  Paperlatch is a small independent developer. We hold <strong>no SOC 2 report and no ISO 27001
+  certificate</strong>, and we have not completed a CAIQ questionnaire. We would rather say that
+  plainly than imply an audit that does not exist. If your procurement process requires one, tell
+  us what you need and we will tell you honestly whether we can meet it.
+</p>
+
+<h2>Incidents</h2>
+<p>
+  If we become aware of a security incident affecting an app, we will notify Atlassian within the
+  timeframe required by the Atlassian Marketplace Partner Agreement, notify affected customers by
+  email, and publish what happened and what changed on this page.
+</p>
+
+<h2>Changes</h2>
+<p>
+  If this policy changes materially, the date at the top of this page will change.
+</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:support@paperlatch.com">support@paperlatch.com</a></p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Home</a>
+  <a href="/confirm-and-chase/support/">Support</a>
+  <a href="/confirm-and-chase/privacy/">Privacy</a>
+</footer>
+
+</div>
+</body>
+</html>
