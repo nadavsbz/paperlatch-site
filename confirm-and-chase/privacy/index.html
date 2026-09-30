@@ -81,7 +81,9 @@
   Four of those are read-only. <code>storage:app</code> is the one write capability, and it
   reaches only the app's own storage described above. The app has
   <strong>no permission to write to your Confluence content</strong>, does not act on behalf
-  of any user, and does not request access to email addresses.
+  of any user, and never reads or stores email addresses. The user-read permission it does
+  hold covers profile information that includes an email address; the app does not read that
+  field, and no email address is written to storage.
 </p>
 
 <h2>Retention and deletion</h2>

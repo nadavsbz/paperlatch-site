@@ -73,7 +73,9 @@
   <li><strong>No write access to customer content.</strong> The apps cannot create, edit or
       delete pages.</li>
   <li><strong>No acting on behalf of a user.</strong> No <code>ACT_AS_USER</code>.</li>
-  <li><strong>No access to email addresses.</strong></li>
+  <li><strong>Email addresses are never read or stored.</strong> The user-read permission the
+      apps hold covers profile information that includes an email address. We do not read that
+      field and never write it to storage.</li>
   <li><strong>No external egress.</strong> The apps make no outbound HTTP requests, so there is
       no third party to trust and no data to encrypt in transit to us.</li>
 </ul>
