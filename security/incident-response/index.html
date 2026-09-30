@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident Response Plan &mdash; Paperlatch</title>
+<meta name="description" content="What Paperlatch does when a security incident affects one of its apps, and on what clock.">
+<link rel="canonical" href="https://paperlatch.com/security/incident-response/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paperlatch.com/security/incident-response/">
+<meta property="og:title" content="Incident Response Plan — Paperlatch">
+<meta property="og:description" content="What Paperlatch does when a security incident affects one of its apps, and on what clock.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>Incident Response Plan</h1>
+<p class="updated">Paperlatch &middot; Last updated 30 September 2026</p>
+
+<div class="note">
+  <p>
+    <strong>The short version.</strong> Atlassian is told within <strong>24 hours</strong>,
+    affected customers within <strong>72 hours</strong>, and Atlassian receives progress
+    updates at least every <strong>6 hours</strong> until the incident is closed. Paperlatch
+    is one person, so this plan names what that person does, in what order, rather than
+    describing a team that does not exist.
+  </p>
+</div>
+
+<h2>What counts as an incident</h2>
+<ul>
+  <li>A vulnerability in one of our apps that could expose, alter or destroy customer data,
+      or allow access beyond the permissions the app declares.</li>
+  <li>Compromise of an account or credential that can publish or modify one of our apps: the
+      Atlassian developer account, the Marketplace partner account, the source repository, or
+      the domain.</li>
+  <li>A report from a researcher, a customer, Atlassian, or an automated scan that credibly
+      indicates either of the above.</li>
+  <li>Discovery that an app behaved outside its declared permissions, or retained data it
+      states it does not retain.</li>
+</ul>
+<p>
+  A functional bug that does not touch security is handled through ordinary support, not this
+  plan. If it is unclear which applies, it is treated as an incident until it is shown not to be.
+</p>
+
+<h2>Roles</h2>
+<p>
+  Paperlatch is a single-person partner. One person holds every role below, and that is stated
+  plainly rather than disguised.
+</p>
+<ul>
+  <li><strong>Incident lead, security contact and communications:</strong> the owner of
+      <a href="mailto:support@paperlatch.com">support@paperlatch.com</a>, who also holds the
+      Atlassian developer account and the Marketplace partner account.</li>
+  <li><strong>Escalation outside the company:</strong> Atlassian Marketplace Security, through
+      the Developer and Marketplace Support portal. Where an incident carries legal or
+      regulatory exposure, external legal counsel is engaged before customer notification
+      goes out.</li>
+</ul>
+
+<h2>Detection</h2>
+<p>We expect to learn of an incident from one of these, and we watch all of them:</p>
+<ul>
+  <li>Email to <a href="mailto:support@paperlatch.com">support@paperlatch.com</a>, checked on
+      business days.</li>
+  <li>Atlassian Marketplace Security tickets and automated scan results on the app.</li>
+  <li>Advisories on the app&rsquo;s own dependency tree.</li>
+  <li>Reports from customers or researchers under the <a href="/security/">security policy</a>.</li>
+</ul>
+
+<h2>The clock</h2>
+<table>
+  <tr><th>When</th><th>What happens</th></tr>
+  <tr><td><strong>Hour 0</strong></td>
+      <td>The report is acknowledged in writing to whoever made it, and a written record is
+          opened: what is known, when it was learned, and from whom.</td></tr>
+  <tr><td><strong>Within 24 hours</strong></td>
+      <td>Atlassian is notified through a <strong>P1 ticket</strong> in the Developer and
+          Marketplace Support portal, with whatever is known at that point. The ticket is
+          raised on the known facts; it is not delayed to make the picture complete.</td></tr>
+  <tr><td><strong>Every 6 hours</strong></td>
+      <td>Progress update to Atlassian on the same ticket until the incident is closed,
+          including when the update is that nothing has changed.</td></tr>
+  <tr><td><strong>Within 72 hours</strong></td>
+      <td>Affected customers are notified by email to their Atlassian site administrators,
+          after legal review where the incident involves personal data.</td></tr>
+  <tr><td><strong>After closure</strong></td>
+      <td>Post-incident review submitted to Atlassian, and a public note added to the
+          <a href="/security/">security policy</a> page.</td></tr>
+</table>
+
+<h2>What the notification to Atlassian contains</h2>
+<ul>
+  <li>Incident category and scope.</li>
+  <li>Impact on end-user data, and the number of customers affected.</li>
+  <li>The types of data involved, if any.</li>
+  <li>Expected time to resolution.</li>
+  <li>Containment already applied, and containment planned.</li>
+  <li>The plan for communicating with end users.</li>
+  <li>Root cause, if it is known yet.</li>
+  <li>Remedial action to prevent recurrence.</li>
+  <li>A contact for ongoing communication.</li>
+</ul>
+<p>
+  Where something is not yet known it is reported as not yet known, and updated later. Nothing
+  is estimated into a gap.
+</p>
+
+<h2>Containment</h2>
+<p>These are the levers we actually have, in the order we would reach for them:</p>
+<ol>
+  <li><strong>Ship a fix.</strong> Forge apps update for every customer at once, so a corrected
+      version reaches everyone without anyone having to upgrade. This is usually both the
+      fastest containment and the remedy.</li>
+  <li><strong>Roll back</strong> to the last version known to be sound, by the same route.</li>
+  <li><strong>Delist the app</strong> from the Atlassian Marketplace to stop new installations
+      while a fix is prepared.</li>
+  <li><strong>Revoke and rotate</strong> the credentials of any account implicated, and
+      re-verify multi-factor authentication on all of them.</li>
+</ol>
+
+<h2>What we cannot do, and why it matters here</h2>
+<p>
+  Our apps hold no customer data outside the customer&rsquo;s own Atlassian site, and we have no
+  facility to read, export or connect to it. That removes several classes of incident entirely:
+  there is no database of ours to breach and no backup of ours to leak. It also means that in an
+  incident affecting data stored by the app, <strong>the customer&rsquo;s site administrator can
+  act on that data and we cannot</strong>. Our notification will say so explicitly, and will
+  state what the administrator needs to do.
+</p>
+
+<h2>Preparedness</h2>
+<ul>
+  <li>Source code is held in version control with multi-factor authentication required.</li>
+  <li>Multi-factor authentication is required on the Atlassian developer account, the
+      Marketplace partner account, the source repository and the domain registrar.</li>
+  <li>Development workstations run endpoint protection and full disk encryption.</li>
+  <li>Each release runs an automated test suite that exercises failure and permission paths,
+      not only the paths that succeed.</li>
+  <li>The dependency tree is audited, and an advisory that is reachable from the app is treated
+      as an incident.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>
+  <a href="mailto:support@paperlatch.com">support@paperlatch.com</a> &mdash; put the word
+  <em>security</em> in the subject line. Reporting guidance, including our response targets and
+  safe harbour, is on the <a href="/security/">security policy</a> page.
+</p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Home</a>
+  <a href="/security/">Security</a>
+  <a href="/confirm-and-chase/privacy/">Privacy</a>
+</footer>
+
+</div>
+</body>
+</html>
