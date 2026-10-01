@@ -75,10 +75,12 @@
   <li><code>read:user:confluence</code> — to show display names</li>
   <li><code>read:group:confluence</code> — to determine the audience</li>
   <li><code>read:confluence-user</code> — to identify the person confirming</li>
+  <li><code>read:content.permission:confluence</code> — to ask Confluence whether you are
+      allowed to see a page before the app tells you anything about it</li>
   <li><code>storage:app</code> — to store the confirmations described above</li>
 </ul>
 <p>
-  Four of those are read-only. <code>storage:app</code> is the one write capability, and it
+  Five of those are read-only. <code>storage:app</code> is the one write capability, and it
   reaches only the app's own storage described above. The app has
   <strong>no permission to write to your Confluence content</strong>, does not act on behalf
   of any user, and never reads or stores email addresses. The user-read permission it does
