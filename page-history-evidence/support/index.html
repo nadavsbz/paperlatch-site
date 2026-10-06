@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation and Support — Page History &amp; Audit Log for Confluence</title>
+<meta name="description" content="How to use Page History &amp; Audit Log for Confluence: reading a page's history, deleted pages, state on a date, the evidence pack export, retention, and the questions that come up most.">
+<link rel="canonical" href="https://paperlatch.com/page-history-evidence/support/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paperlatch.com/page-history-evidence/support/">
+<meta property="og:title" content="Documentation and Support — Page History &amp; Audit Log">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-history-evidence/">Page History</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>Documentation and support</h1>
+<p class="lead">
+  Page History &amp; Audit Log for Confluence &mdash; what it records, how to read it, and what
+  it will not tell you.
+</p>
+
+<h2>Getting started</h2>
+<p>
+  There is nothing to configure. The moment the app is installed it begins recording the page,
+  attachment and space events Confluence emits. Open <strong>Page History &amp; Evidence</strong>
+  from the Apps menu to see recent activity across the site, or from a space to work within it.
+</p>
+<p>
+  <strong>It records from installation onward.</strong> A page that existed before and has not
+  been touched since will have no entries. That is not a fault, and the app says so rather than
+  showing you an empty timeline as though nothing had happened.
+</p>
+
+<h2>Reading a page's history</h2>
+<p>
+  Enter a page ID, or use the <em>Trail</em> link beside any entry in recent activity. The
+  timeline runs oldest first, because that is the order an auditor reads it in, and each row
+  carries the event, the version number at that moment, and who caused it.
+</p>
+<p>
+  Events recorded: created, updated, moved between spaces, copied, archived, unarchived, trashed,
+  restored, deleted, and permission changes &mdash; for pages, and the equivalent for attachments.
+  <strong>Page views and likes are deliberately not recorded:</strong> enormous volume, no
+  evidentiary value.
+</p>
+
+<h2>State on a date</h2>
+<p>
+  Pick a date and the app replays the events up to that moment to report what the page's version
+  and status were. It gives one of three answers, and the distinction matters:
+</p>
+<ul>
+  <li>the state, when the trail covers that date;</li>
+  <li><em>the trail had not started</em>, when the date is before the app was installed;</li>
+  <li><em>this cannot be answered reliably</em>, when part of the stored trail could not be read.</li>
+</ul>
+<p>
+  The third is rare. It exists because reporting a confident answer from an incomplete trail is
+  worse than reporting none.
+</p>
+
+<h2>The evidence pack</h2>
+<p>
+  <strong>Download evidence pack (CSV)</strong> exports the timeline. The file carries its own
+  caveats in rows at the bottom &mdash; whether the trail was complete, when tracking began, and
+  whether the space was deleted &mdash; so the caveats travel with the file rather than staying
+  behind on the screen it came from.
+</p>
+<p>
+  Each row carries both the display name and the Atlassian account ID. The name is the
+  convenience; the ID is the identifier, and a file carrying only a display name cannot be
+  checked back against the site later.
+</p>
+
+<h2>Deleted pages</h2>
+<p>
+  A page that is trashed or deleted keeps its record. Two limits apply:
+</p>
+<ul>
+  <li><strong>A page deleted together with its space</strong> produces no page-level event:
+      Confluence does not emit cascading deletion events. The app reports it from the space
+      record and labels it as an inference, not as a recorded event.</li>
+  <li><strong>Once a page is gone, Confluence can no longer say who was allowed to read it.</strong>
+      The app will not hand its history to someone whose permission it cannot verify, so the
+      report shows <em>this page has history you cannot see</em> rather than pretending there is
+      none. If this blocks a legitimate investigation for you, write to us &mdash; it is a
+      deliberate choice and we would like to know how it lands in practice.</li>
+</ul>
+
+<h2>Gaps, and why the app advertises its own failures</h2>
+<p>
+  The panel at the top of every screen reports whether the trail is whole. If the app could not
+  record an event &mdash; a failed write, an unreadable payload, an event with no page attached
+  &mdash; it stores a gap marker and shows it there, grouped by cause.
+</p>
+<p>
+  A log that loses an event in silence is worse than no log, because it lets someone sign a
+  statement that nothing happened. If you see gaps, the trail is telling you it is incomplete,
+  and that is the moment to tell us.
+</p>
+
+<h2>Retention</h2>
+<p>
+  Event records are kept for 24 months by default. A site administrator can change that from the
+  app's screen. A daily job removes anything older.
+</p>
+<p>
+  Two things are never removed: the gap markers, and the per-page summary. A page whose events
+  have aged out is still reported as a page that existed &mdash; which is a different statement
+  from <em>this page has no history</em>.
+</p>
+<p>
+  <strong>Shortening retention deletes records permanently</strong>, and the change is itself
+  recorded so that whoever reads the trail next can see it was made.
+</p>
+
+<h2>Common questions</h2>
+<p>
+  <strong>Can it show history from before I installed it?</strong> No. Those events were never
+  sent to the app and no API returns them afterwards.
+</p>
+<p>
+  <strong>Can it tell me why something was deleted?</strong> No. Confluence does not collect a
+  reason, so no app can report one.
+</p>
+<p>
+  <strong>Does it store my page content?</strong> No. It records that an event happened and to
+  which revision &mdash; never the text or the file. It does store page titles, because a record
+  that cannot name the page is of no use once the page is gone.
+</p>
+<p>
+  <strong>Why does it ask for a write permission?</strong> Atlassian requires
+  <code>write:confluence-content</code> in order to deliver deletion events to a Forge app. The
+  app issues no write request of any kind. The reasoning is set out in full on
+  <a href="/page-history-evidence/#permissions">the app page</a> and in
+  <a href="/page-history-evidence/privacy/">the privacy policy</a>.
+</p>
+<p>
+  <strong>Can other people see history for pages they cannot read?</strong> No. Before any page's
+  history is shown, the app asks Confluence whether that specific person is allowed to read that
+  specific page. Where the answer cannot be determined, it refuses.
+</p>
+
+<h2>Support</h2>
+<p>
+  Email <a href="mailto:support@paperlatch.com">support@paperlatch.com</a> on business days. We
+  aim to reply within two business days.
+</p>
+<p>So the first reply is a useful one, please include:</p>
+<ul>
+  <li>your Atlassian site URL;</li>
+  <li>the page ID you were looking at, if the question is about a particular trail;</li>
+  <li>what you expected to see and what appeared instead;</li>
+  <li>whether the integrity panel at the top of the screen was reporting any gaps.</li>
+</ul>
+
+<h2>Security and privacy</h2>
+<p>
+  <a href="/security/">Our security policy</a> covers how to report a vulnerability and what the
+  app can reach. <a href="/page-history-evidence/privacy/">The privacy policy</a> lists exactly
+  what is stored and for how long.
+</p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Paperlatch</a>
+  <a href="/page-history-evidence/privacy/">Privacy</a>
+  <a href="/page-history-evidence/terms/">Terms</a>
+  <a href="/security/">Security</a>
+</footer>
+
+</div>
+</body>
+</html>
