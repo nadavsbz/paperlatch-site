@@ -23,6 +23,7 @@
   <a class="name" href="/">Paperlatch</a>
   <nav>
     <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-history-evidence/">Page History</a>
     <a href="/confirm-and-chase/support/">Support</a>
     <a href="/confirm-and-chase/privacy/">Privacy</a>
   </nav>
@@ -50,6 +51,18 @@
   <p><a href="/confirm-and-chase/">What it does, with screenshots &rarr;</a></p>
 </div>
 
+<div class="card">
+  <h3><a href="/page-history-evidence/">Page&nbsp;History &amp; Audit&nbsp;Log</a></h3>
+  <p>
+    A content-level audit log for Confluence. Confluence's own audit log does not record
+    content edits or moves &mdash; this one does: page history including moves between
+    spaces, deleted pages and trash details, and attachment history, with an evidence pack
+    you can export. When it cannot record something, it says so, instead of looking
+    complete.
+  </p>
+  <p><a href="/page-history-evidence/">What it records, and what it does not &rarr;</a></p>
+</div>
+
 <figure>
   <img src="/assets/01-dashboard.png" width="1100" height="538"
        alt="The Policy compliance dashboard listing three policies with how many people have confirmed each one.">
@@ -61,13 +74,24 @@
 <ul>
   <li>Runs on Atlassian Forge, inside Atlassian</li>
   <li>No application server of ours, and no external storage of your page content</li>
-  <li>Read-only access to your content; the only thing it writes is its own
-      confirmation records</li>
+  <li>Neither app writes to your content. Each stores only its own records &mdash;
+      confirmations in one, an event history in the other</li>
   <li>No acting on a user's behalf</li>
-  <li>No access to email addresses, and no advertising or behavioural analytics in the app</li>
+  <li>No advertising and no behavioural analytics in either app</li>
 </ul>
 <p>
-  Every one of those is checkable on the Permissions tab of a Marketplace listing.
+  Every one of those is checkable on the Permissions tab of a Marketplace listing, which is
+  the point of stating them this way rather than asking you to take our word for it.
+</p>
+<p>
+  One honest footnote, because you will see it on that tab:
+  <a href="/page-history-evidence/">Page History &amp; Audit Log</a> requests a write scope
+  it never uses. Atlassian requires it in order to <em>deliver</em> page deletion events to
+  a Forge app &mdash; a condition for receiving the notification, not for performing an
+  action. <a href="/page-history-evidence/#permissions">The reasoning is set out in full</a>
+  on that app's page.
+</p>
+<p>
   <a href="/confirm-and-chase/privacy/">The privacy policy</a> lists exactly what is stored.
 </p>
 

@@ -21,6 +21,7 @@
   <a class="name" href="/">Paperlatch</a>
   <nav>
     <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-history-evidence/">Page History</a>
     <a href="/confirm-and-chase/support/">Support</a>
     <a href="/confirm-and-chase/privacy/">Privacy</a>
     <a href="/confirm-and-chase/terms/">Terms</a>
@@ -67,11 +68,23 @@
   Each app declares the narrowest set of Forge scopes it needs, and the full list is published on
   the Permissions tab of its Atlassian Marketplace listing. For
   <a href="/confirm-and-chase/">Confirm &amp; Chase</a> that is five read scopes plus the app's
-  own storage.
+  own storage. For <a href="/page-history-evidence/">Page History &amp; Audit Log</a> it is six
+  read scopes, the app's own storage, and one write scope it never uses &mdash; see the note
+  below.
 </p>
 <ul>
-  <li><strong>No write access to customer content.</strong> The apps cannot create, edit or
-      delete pages.</li>
+  <li><strong>Neither app writes to customer content.</strong> Neither one creates, edits,
+      moves, restricts or deletes a page, and you can hold us to that.
+      <br>
+      One of them does <em>hold</em> a write scope, and we would rather tell you than have you
+      find it on the Permissions tab:
+      <a href="/page-history-evidence/#permissions">Page History &amp; Audit Log</a> requests
+      <code>write:confluence-content</code> because Atlassian requires that scope in order to
+      <em>deliver</em> page deletion events to a Forge app. It is a condition for receiving the
+      notification, not for performing an action, and Atlassian's events reference says the
+      requirement may be removed in future. The app issues no write request of any kind.
+      Without the scope it would stop recording the moment a page was deleted, which is the one
+      failure an audit log must not have.</li>
   <li><strong>No acting on behalf of a user.</strong> No <code>ACT_AS_USER</code>.</li>
   <li><strong>Email addresses are never read or stored.</strong> The user-read permission the
       apps hold covers profile information that includes an email address. We do not read that

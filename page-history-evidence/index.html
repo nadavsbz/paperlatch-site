@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page History &amp; Audit Log for Confluence — Deleted Pages, Moves &amp; Attachments</title>
+<meta name="description" content="A content-level audit log for Confluence: page history including moves between spaces, deleted pages and trash details, attachment history, and an evidence pack you can export. Runs on Forge. It tells you when it is incomplete.">
+<link rel="canonical" href="https://paperlatch.com/page-history-evidence/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paperlatch.com/page-history-evidence/">
+<meta property="og:title" content="Page History &amp; Audit Log for Confluence">
+<meta property="og:description" content="Confluence's own audit log does not record content edits or moves. This one does — and it tells you when it is incomplete.">
+<meta property="og:image" content="https://paperlatch.com/assets/logo-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-history-evidence/">Page History</a>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+  </nav>
+</header>
+
+<h1>Page history and audit log for Confluence</h1>
+<p class="lead">
+  What happened to this document — including the moves, the deletions and the
+  attachments that Confluence's own history leaves out.
+</p>
+
+<p>
+  Confluence's built-in audit log covers spaces, permissions, users and settings.
+  Atlassian's own documentation says it
+  <strong>&ldquo;doesn't record information related to content edits or changes to a
+  content's location&rdquo;</strong>. So when an auditor asks what happened to a
+  particular document, the answer is not in it.
+</p>
+
+<!-- MARKETPLACE_CTA: replace this block with the install button once the listing is live -->
+<div class="note">
+  <p>
+    <strong>Page History &amp; Audit Log is being published to the Atlassian Marketplace.</strong>
+    The install link will appear here as soon as the listing is approved.
+  </p>
+</div>
+
+<h2>What it records</h2>
+<p>
+  From the moment it is installed, it keeps its own content-level history from the events
+  Confluence emits:
+</p>
+<ul>
+  <li><strong>Page history</strong> — created, updated, moved between spaces, copied,
+      archived, restored, and permission changes, each with the version number, the person
+      and the time</li>
+  <li><strong>Deleted pages and trash details</strong> — trashed, restored and deleted,
+      so a page that is gone still has a record</li>
+  <li><strong>Attachment history</strong> — on the same timeline as the page it belongs to,
+      with file size and type</li>
+  <li><strong>State on a date</strong> — what a page's version and status were on a given
+      day, replayed from the events</li>
+  <li><strong>An evidence pack</strong> — exported as CSV, with its own caveats written
+      inside the file rather than left behind</li>
+</ul>
+
+<h2>It tells you when it is incomplete</h2>
+<p>
+  An audit log is a commodity. The admission that a log has a hole in it is not.
+</p>
+<p>
+  When this app cannot record something — a failed write, an event it cannot read, an event
+  with no page attached — it stores a gap marker, and the report shows it at the top of
+  every screen. A trail that is used as evidence should state its own completeness, rather
+  than look clean because something went missing quietly.
+</p>
+
+<h2>What it does not do, stated plainly</h2>
+<ul>
+  <li>It records from installation onward. History from before that was never sent to it
+      and cannot be recovered.</li>
+  <li>Confluence does not emit cascading deletion events, so a page removed together with
+      its space is reported from the space record and <strong>labelled as an inference</strong>,
+      not as a recorded page event.</li>
+  <li>It does not record page views or likes. Enormous volume, no evidentiary value.</li>
+  <li>It cannot tell you <em>why</em> something was deleted. Confluence does not collect a
+      reason, so nobody can report one.</li>
+</ul>
+
+<h2 id="permissions">Permissions, including the awkward one</h2>
+<p>
+  This app <strong>does not write to Confluence</strong>. It requests one write scope,
+  <code>write:confluence-content</code>, for a single reason: Atlassian requires that scope
+  in order to <em>deliver</em> page &ldquo;trashed&rdquo; and &ldquo;deleted&rdquo; events to
+  a Forge app. It is a requirement for receiving the notification, not for performing an
+  action, and Atlassian's own events reference notes the requirement
+  &ldquo;may be removed in the future&rdquo;.
+</p>
+<p>
+  Without it the app would stop recording the moment a page is deleted, which is precisely
+  the failure an evidence trail exists to prevent. We would rather ask for the scope and
+  explain it here than quietly ship a log with a hole where the deletions should be.
+</p>
+<p>
+  The only outbound request this app makes, other than reading events, is asking Confluence
+  whether the person viewing a report is allowed to see a given page — before any of that
+  page's history is shown. It never creates, edits, moves, restricts or deletes anything.
+</p>
+
+<h2>Where your data sits</h2>
+<ul>
+  <li>Runs on Atlassian Forge, inside Atlassian — eligible for Runs on Atlassian</li>
+  <li>No application server of ours, and no external storage of your content</li>
+  <li>No egress to any host outside the Atlassian product APIs</li>
+  <li>Page content itself is never stored — only the fact that an event happened, its
+      version number, its timestamp and who caused it</li>
+</ul>
+<p>
+  <a href="/security/">Our security policy</a> lists the complete scope set and what we do
+  not claim.
+</p>
+
+<h2>Support</h2>
+<p>
+  Email <a href="mailto:support@paperlatch.com">support@paperlatch.com</a> on business days.
+  We aim to reply within two business days.
+</p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="mailto:support@paperlatch.com">support@paperlatch.com</a>
+  <a href="/confirm-and-chase/privacy/">Privacy</a>
+  <a href="/confirm-and-chase/terms/">Terms</a>
+</footer>
+
+</div>
+</body>
+</html>
