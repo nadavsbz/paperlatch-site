@@ -25,6 +25,7 @@
     <a href="/confirm-and-chase/support/">Support</a>
     <a href="/confirm-and-chase/privacy/">Privacy</a>
     <a href="/confirm-and-chase/terms/">Terms</a>
+    <a href="/security/">Security</a>
   </nav>
 </header>
 
@@ -71,15 +72,16 @@
 </p>
 
 <h2>Permissions the app requests</h2>
+<!-- GEN:scopes:confirm-and-chase -->
 <ul>
-  <li><code>read:page:confluence</code> — to show page titles in the report</li>
-  <li><code>read:user:confluence</code> — to show display names</li>
-  <li><code>read:group:confluence</code> — to determine the audience</li>
-  <li><code>read:confluence-user</code> — to identify the person confirming</li>
-  <li><code>read:content.permission:confluence</code> — to ask Confluence whether you are
-      allowed to see a page before the app tells you anything about it</li>
-  <li><code>storage:app</code> — to store the confirmations described above</li>
+  <li><code>read:confluence-user</code> &mdash; to identify the person confirming</li>
+  <li><code>storage:app</code> &mdash; to store the confirmations described above</li>
+  <li><code>read:page:confluence</code> &mdash; to show page titles in the report</li>
+  <li><code>read:user:confluence</code> &mdash; to show display names</li>
+  <li><code>read:group:confluence</code> &mdash; to determine the audience</li>
+  <li><code>read:content.permission:confluence</code> &mdash; to ask Confluence whether you are allowed to see a page before the app tells you anything about it</li>
 </ul>
+<!-- /GEN -->
 <p>
   Five of those are read-only. <code>storage:app</code> is the one write capability, and it
   reaches only the app's own storage described above. The app has

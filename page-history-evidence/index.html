@@ -24,6 +24,9 @@
   <nav>
     <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
     <a href="/page-history-evidence/">Page History</a>
+    <a href="/page-history-evidence/support/">Support</a>
+    <a href="/page-history-evidence/privacy/">Privacy</a>
+    <a href="/page-history-evidence/terms/">Terms</a>
     <a href="/security/">Security</a>
   </nav>
 </header>
@@ -109,16 +112,17 @@
 
 <h2 id="permissions">Permissions, including the awkward one</h2>
 <p>
-  This app <strong>does not write to Confluence</strong>. It requests one write scope,
-  <code>write:confluence-content</code>, for a single reason: Atlassian requires that scope
-  in order to <em>deliver</em> page &ldquo;trashed&rdquo; and &ldquo;deleted&rdquo; events to
-  a Forge app. It is a requirement for receiving the notification, not for performing an
-  action, and Atlassian's own events reference notes the requirement
+  This app <strong>does not write to Confluence</strong>. It requests two write scopes,
+  <code>write:confluence-content</code> and <code>write:confluence-space</code>, for a single
+  reason: Atlassian requires them in order to <em>deliver</em> deletion events to a Forge app
+  &mdash; page &ldquo;trashed&rdquo; and &ldquo;deleted&rdquo; events for the first, space
+  &ldquo;deleted&rdquo; and &ldquo;permissions updated&rdquo; events for the second. It is a requirement for receiving the notification, not for performing an
+  action, and Atlassian's own events reference notes that each requirement
   &ldquo;may be removed in the future&rdquo;.
 </p>
 <p>
-  Without it the app would stop recording the moment a page is deleted, which is precisely
-  the failure an evidence trail exists to prevent. We would rather ask for the scope and
+  Without them the app would stop recording the moment a page, or a whole space, is deleted, which is precisely
+  the failure an evidence trail exists to prevent. We would rather ask for the scopes and
   explain it here than quietly ship a log with a hole where the deletions should be.
 </p>
 <p>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the Confluence Cloud audit log records — and what it does not</title>
+<meta name="description" content="Confluence Cloud's audit log covers spaces, users, permissions and settings, but not content edits or page moves. What it misses and how to fill the gap.">
+<link rel="canonical" href="https://paperlatch.com/guides/confluence-audit-log/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paperlatch.com/guides/confluence-audit-log/">
+<meta property="og:title" content="What the Confluence Cloud audit log records — and what it does not">
+<meta property="og:description" content="Content edits and page moves are not in the Confluence audit log. Here is what is, and how to fill the gap.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-history-evidence/">Page History</a>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+    <a href="/confirm-and-chase/terms/">Terms</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>What the Confluence Cloud audit log records &mdash; and what it does not</h1>
+<p class="updated">Guide &middot; Checked against Atlassian's documentation on 14 October 2026</p>
+
+<p class="lead">
+  If an auditor asks who changed a policy page, who moved it to another space, or who deleted it,
+  the Confluence audit log is the first place most admins look. For those three questions it is
+  usually the wrong place.
+</p>
+
+<h2>What it records</h2>
+<p>
+  Atlassian's <a href="https://support.atlassian.com/confluence-cloud/docs/view-the-audit-log/">audit
+  log documentation</a> lists these categories of events: spaces, users and groups, global
+  administration, permissions, public links, content, and templates &mdash; and notes that the list
+  is not exhaustive. In practice it is a record of how the <em>site</em> is configured and who has
+  access to what.
+</p>
+
+<h2>What it does not record</h2>
+<p>The same page says so directly:</p>
+<blockquote>
+  &ldquo;The audit log doesn&rsquo;t record information related to content edits (you can view this
+  in the version history)&rdquo; &mdash; and it excludes changes to a content&rsquo;s location.
+</blockquote>
+<p>That leaves three gaps that matter in an audit:</p>
+<ul>
+  <li><strong>Edits.</strong> Each page's version history shows its edits, but only page by page,
+      and only while the page exists.</li>
+  <li><strong>Moves.</strong> A policy moved from one space to another changes who can see it.
+      The audit log does not record the move.</li>
+  <li><strong>Deletions with their context.</strong> Once a page is purged from the trash, its
+      version history goes with it.</li>
+</ul>
+
+<h2>Retention and plans</h2>
+<ul>
+  <li>Events are kept for <strong>one year by default</strong>; an admin can shorten that to as
+      little as 31 days.</li>
+  <li>The audit log is <strong>not available on the Free plan</strong>.</li>
+</ul>
+
+<h2>Filling the gap</h2>
+<p>
+  There are three honest options. You can rely on version history and accept that moves and
+  purged pages are invisible. You can build an Automation rule that comments on a page when it
+  moves &mdash; workable for one space, hard to keep complete across a site. Or you can install an
+  app that listens to Confluence's content events and keeps its own record.
+</p>
+<p>
+  We build one: <a href="/page-history-evidence/">Page History &amp; Audit Log</a> records page
+  creation, edits, moves between spaces, trash and deletion, and attachment changes, and exports
+  them as an evidence pack. Two limits you should know before relying on any tool of this kind,
+  ours included:
+</p>
+<ul>
+  <li>It can only record from the moment it is installed. History from before that was never sent
+      to it.</li>
+  <li>Confluence does not send an event for each page when a whole space is deleted. A tool can only
+      infer those deletions from the space record &mdash; ours labels them as an inference.</li>
+</ul>
+<!-- GEN:cta:page-history-evidence -->
+<p><em>Page History & Evidence is in Atlassian Marketplace review. The listing link will appear here once it is approved.</em></p>
+<!-- /GEN -->
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Paperlatch</a>
+  <a href="/page-history-evidence/">Page History &amp; Audit Log</a>
+  <a href="/security/">Security</a>
+</footer>
+
+</div>
+</body>
+</html>

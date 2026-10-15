@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Page History &amp; Audit Log for Confluence</title>
-<meta name="description" content="What Page History &amp; Audit Log for Confluence stores, what it reads, where the data lives, and the permissions it requests — including the write scope it never uses.">
+<meta name="description" content="What Page History &amp; Audit Log stores, reads and where the data lives — including the two write scopes it holds and never uses.">
 <link rel="canonical" href="https://paperlatch.com/page-history-evidence/privacy/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://paperlatch.com/page-history-evidence/privacy/">
@@ -22,6 +22,9 @@
   <nav>
     <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
     <a href="/page-history-evidence/">Page History</a>
+    <a href="/page-history-evidence/support/">Support</a>
+    <a href="/page-history-evidence/privacy/">Privacy</a>
+    <a href="/page-history-evidence/terms/">Terms</a>
     <a href="/security/">Security</a>
   </nav>
 </header>
@@ -83,32 +86,33 @@
 </p>
 
 <h2>Permissions the app requests</h2>
+<!-- GEN:scopes:page-history-evidence -->
 <ul>
-  <li><code>read:page:confluence</code> — to receive page events</li>
-  <li><code>read:attachment:confluence</code> — to receive attachment events</li>
-  <li><code>read:space:confluence</code> — to receive space events</li>
-  <li><code>read:confluence-content.summary</code> — required by Atlassian to deliver content
-      events to a Forge app</li>
-  <li><code>read:content.permission:confluence</code> — to ask Confluence whether you are
-      allowed to see a page before the app shows you anything about it</li>
-  <li><code>read:user:confluence</code> and <code>read:confluence-user</code> — to turn an
-      account ID into a display name in the report</li>
-  <li><code>storage:app</code> — to store the records described above</li>
-  <li><code>write:confluence-content</code> — <strong>requested and never used.</strong> See below.</li>
+  <li><code>storage:app</code> &mdash; to store the records described above</li>
+  <li><code>read:user:confluence</code> &mdash; to turn an account ID into a display name in the report</li>
+  <li><code>read:confluence-user</code> &mdash; to turn an account ID into a display name in the report</li>
+  <li><code>read:content.permission:confluence</code> &mdash; to ask Confluence whether you are allowed to see a page before the app shows you anything about it</li>
+  <li><code>read:confluence-content.summary</code> &mdash; required by Atlassian to deliver page and attachment events to a Forge app</li>
+  <li><code>write:confluence-content</code> &mdash; <strong>requested and never used.</strong> Atlassian requires it to deliver page &ldquo;trashed&rdquo; and &ldquo;deleted&rdquo; events. See below.</li>
+  <li><code>read:confluence-space.summary</code> &mdash; required by Atlassian to deliver space events to a Forge app</li>
+  <li><code>write:confluence-space</code> &mdash; <strong>requested and never used.</strong> Atlassian requires it to deliver space &ldquo;deleted&rdquo; and &ldquo;permissions updated&rdquo; events. See below.</li>
 </ul>
+<!-- /GEN -->
 
-<h3>The write scope, explained rather than hidden</h3>
+<h3>The two write scopes, explained rather than hidden</h3>
 <p>
   Atlassian requires <code>write:confluence-content</code> in order to <em>deliver</em> page
-  &ldquo;trashed&rdquo; and &ldquo;deleted&rdquo; events to a Forge app. It is a condition for
+  &ldquo;trashed&rdquo; and &ldquo;deleted&rdquo; events to a Forge app, and
+  <code>write:confluence-space</code> in order to deliver space &ldquo;deleted&rdquo; and
+  &ldquo;permissions updated&rdquo; events. It is a condition for
   receiving the notification, not for performing an action, and Atlassian's own events reference
-  notes that the requirement &ldquo;may be removed in the future&rdquo;.
+  notes for both that the requirement &ldquo;may be removed in the future&rdquo;.
 </p>
 <p>
   <strong>The app issues no write request to Confluence of any kind.</strong> It never creates,
-  edits, moves, restricts or deletes a page, an attachment or a space. Without the scope it would
-  stop recording the moment a page was deleted, which is the one failure an audit log must not
-  have, so we ask for it and tell you why.
+  edits, moves, restricts or deletes a page, an attachment or a space. Without these scopes it would
+  stop recording the moment a page or a whole space was deleted, which is the one failure an audit log must not
+  have, so we ask for them and tell you why.
 </p>
 
 <h2>Retention and deletion</h2>
