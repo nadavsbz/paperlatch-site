@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Documentation and Support — Page History &amp; Audit Log for Confluence</title>
-<meta name="description" content="How to use Page History &amp; Audit Log for Confluence: reading a page's history, deleted pages, state on a date, the evidence pack export, retention, and the questions that come up most.">
+<meta name="description" content="How to use Page History &amp; Evidence: a page's history, deleted pages, state on a date, the evidence pack (CSV), retention and common questions.">
 <link rel="canonical" href="https://paperlatch.com/page-history-evidence/support/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://paperlatch.com/page-history-evidence/support/">
@@ -61,8 +61,9 @@
 
 <h2>State on a date</h2>
 <p>
-  Pick a date and the app replays the events up to that moment to report what the page's version
-  and status were. It gives one of three answers, and the distinction matters:
+  Pick a date and the app replays the events up to the end of that day &mdash; midnight in your
+  own time zone, not in UTC &mdash; to report whether the page existed and which version was in
+  force. It gives one of three answers, and the distinction matters:
 </p>
 <ul>
   <li>the state, when the trail covers that date;</li>
@@ -82,6 +83,12 @@
   behind on the screen it came from.
 </p>
 <p>
+  The file names the page by its ID as well as its title (titles change), and states that
+  every time in it is UTC. A cell that would start with <code>=</code>, <code>+</code>,
+  <code>-</code> or <code>@</code> is written so that Excel shows it as text instead of running
+  it as a formula &mdash; page titles are typed by anyone who can edit.
+</p>
+<p>
   Each row carries both the display name and the Atlassian account ID. The name is the
   convenience; the ID is the identifier, and a file carrying only a display name cannot be
   checked back against the site later.
@@ -96,10 +103,13 @@
       Confluence does not emit cascading deletion events. The app reports it from the space
       record and labels it as an inference, not as a recorded event.</li>
   <li><strong>Once a page is gone, Confluence can no longer say who was allowed to read it.</strong>
-      The app will not hand its history to someone whose permission it cannot verify, so the
-      report shows <em>this page has history you cannot see</em> rather than pretending there is
-      none. If this blocks a legitimate investigation for you, write to us &mdash; it is a
-      deliberate choice and we would like to know how it lands in practice.</li>
+      Its history is therefore shown to <strong>Confluence administrators only</strong>, with a
+      note saying so. Everyone else sees <em>this page has history you cannot see</em> rather
+      than a pretence that there is none. A page in the trash is still known to Confluence, so
+      the normal page permissions apply to it until it is purged.</li>
+  <li><strong>Changes made within a second or two before a page is deleted</strong> may not be
+      recorded: Confluence does not deliver those events once the page is gone. At a human pace
+      this does not happen; a script that creates and deletes pages instantly can trigger it.</li>
 </ul>
 
 <h2>Gaps, and why the app advertises its own failures</h2>
@@ -116,8 +126,9 @@
 
 <h2>Retention</h2>
 <p>
-  Event records are kept for 24 months by default. A site administrator can change that from the
-  app's screen. A daily job removes anything older.
+  Event records are kept for 24 months by default. Only a Confluence administrator can change
+  the retention period, and there is no screen for it yet: write to support and we will tell you
+  how. A daily job removes anything older.
 </p>
 <p>
   Two things are never removed: the gap markers, and the per-page summary. A page whose events
