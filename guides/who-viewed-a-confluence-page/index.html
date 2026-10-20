@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can you see who viewed a Confluence page? (And why it isn&#x27;t proof they read it)</title>
+<meta name="description" content="Which Confluence Cloud plans show who viewed a page, what privacy mode hides, and why a page view is not evidence that someone read and understood a policy.">
+<link rel="canonical" href="https://paperlatch.com/guides/who-viewed-a-confluence-page/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paperlatch.com/guides/who-viewed-a-confluence-page/">
+<meta property="og:title" content="Can you see who viewed a Confluence page? (And why it isn&#x27;t proof they read it)">
+<meta property="og:description" content="Which Confluence Cloud plans show who viewed a page, what privacy mode hides, and why a page view is not evidence that someone read and understood a policy.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-history-evidence/">Page History</a>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+    <a href="/confirm-and-chase/terms/">Terms</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>Can you see who viewed a Confluence page? (And why it isn't proof they read it)</h1>
+<p class="updated">Guide &middot; Checked against Atlassian's documentation on 20 October 2026</p>
+
+<p><strong>Short answer:</strong> on Confluence Cloud <strong>Premium</strong> and <strong>Enterprise</strong>, yes &mdash; page analytics lists individual viewers. On <strong>Standard</strong>, you see how many people viewed a page, not who. And on any plan, a Confluence admin can turn on privacy mode, which replaces viewer names with hashed usernames.</p>
+
+<p>That answers the question as asked. But if you are asking because you need to know whether people <em>read</em> something &mdash; a policy, an SOP, a security procedure &mdash; a page view is the wrong evidence. More on that below.</p>
+
+<h2>What each plan shows</h2>
+
+<table>
+<thead><tr><th>Plan</th><th>What you see about viewers</th></tr></thead>
+<tbody>
+<tr><td>Free</td><td>No content insights</td></tr>
+<tr><td>Standard</td><td>Total views and estimated read time in the byline; a chart of views and unique viewers</td></tr>
+<tr><td>Premium, Enterprise</td><td>The full page analytics screen, including a per-viewer list: engagement, last version viewed, last viewed, number of views</td></tr>
+</tbody>
+</table>
+
+<p>Source: Atlassian, <a href="https://support.atlassian.com/confluence-cloud/docs/view-insights-on-pages/">Content insights and analytics</a>. If the view count does not appear in a page's byline, your plan does not include content insights.</p>
+
+<h2>How to check who viewed a page (Premium and Enterprise)</h2>
+
+<ol>
+  <li>Open the page.</li>
+  <li>Select the view count in the byline, under the page title.</li>
+  <li>Select <strong>View all page analytics</strong>.</li>
+  <li>The overview lists viewers, with the last version each person viewed.</li>
+</ol>
+
+<h2>Privacy mode can hide viewer names</h2>
+
+<p>Confluence admins can turn on <strong>Hide personal data in analytics</strong> (Settings → Security → Security configuration). Atlassian's documentation says this "will replace user names and avatars with a hashed user name", and that repeat views by the same person are no longer recorded. Views recorded while privacy mode is on stay anonymized, even if it is turned off later.</p>
+
+<p>Source: Atlassian, <a href="https://support.atlassian.com/confluence-cloud/docs/turn-on-privacy-mode-for-analytics-data/">Turn on privacy mode for analytics data</a>.</p>
+
+<p>So whether you can see names depends on your plan <em>and</em> on a setting that someone else controls.</p>
+
+<h2>Why a page view is not evidence that someone read a policy</h2>
+
+<p>If an auditor asks you to show that employees have read the information security policy, page analytics will not answer the question. Four reasons:</p>
+
+<ol>
+  <li><strong>A view is not a statement.</strong> Opening a page for two seconds counts as a view. Nobody said "I have read and understood this".</li>
+  <li><strong>There is no audience.</strong> Analytics tells you who came. It does not tell you who <em>should</em> have come and didn't &mdash; and that is the list you actually act on.</li>
+  <li><strong>It is not tied to what they agreed to.</strong> If the policy changed last month, you need to know who confirmed the <em>current</em> version, not who opened some version at some point.</li>
+  <li><strong>It depends on a setting.</strong> With privacy mode on, there are no names at all.</li>
+</ol>
+
+<p>When ISO 27001 or SOC 2 audits ask about policies, a common way to show that people were told about them is an <strong>attestation</strong> &mdash; typically a named person, the version of the document they saw, a timestamp, and a record that survives the next edit. Whether your auditor asks for this, and in what form, depends on your own controls and their request list; neither framework prescribes a specific form.</p>
+
+<h2>What to use instead</h2>
+
+<p>If you only need a rough sense of reach, page analytics is fine and costs nothing extra on Premium.</p>
+
+<p>If you need a record you can hand to an auditor, you need a confirmation step on the page itself. Confluence does not have one built in, so this means a Marketplace app. Several exist &mdash; QC Read and Understood and Comala Read Confirmations are the most installed.</p>
+
+<p>We make one of them: <strong><a href="https://marketplace.atlassian.com/apps/948129892/confirm-chase-mandatory-reading-policy-attestation">Confirm &amp; Chase</a></strong>. It adds a confirmation button to a page, and you pick the group that must confirm. One dashboard shows who confirmed and who is outstanding, across every space. When the policy changes, a new round starts and earlier rounds stay on record. It runs on Atlassian Forge with read-only permissions, and it is free for up to 10 users.</p>
+
+<p><em>Paperlatch makes Confirm &amp; Chase. Checked against Atlassian's documentation on 20 October 2026.</em></p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Paperlatch</a>
+  <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+  <a href="/page-history-evidence/">Page History &amp; Audit Log</a>
+  <a href="/security/">Security</a>
+</footer>
+
+</div>
+</body>
+</html>

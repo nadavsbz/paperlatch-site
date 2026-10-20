@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Policy attestation for ISO 27001 and SOC 2: what auditors look for</title>
+<meta name="description" content="What ISO 27001:2022 control 5.1 says about acknowledging policies, what SOC 2 auditors commonly request as evidence, and how to keep attestation records when your policies live in Confluence.">
+<link rel="canonical" href="https://paperlatch.com/guides/policy-attestation-iso-27001-soc-2/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paperlatch.com/guides/policy-attestation-iso-27001-soc-2/">
+<meta property="og:title" content="Policy attestation for ISO 27001 and SOC 2: what auditors look for">
+<meta property="og:description" content="What ISO 27001:2022 control 5.1 says about acknowledging policies, what SOC 2 auditors commonly request as evidence, and how to keep attestation records when your policies live in Confluence.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-history-evidence/">Page History</a>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+    <a href="/confirm-and-chase/terms/">Terms</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>Policy attestation for ISO 27001 and SOC 2: what auditors look for</h1>
+<p class="updated">Guide &middot; Checked against Atlassian's documentation on 20 October 2026</p>
+
+<p>A policy attestation is a person's recorded statement that they have read a policy and will follow it. Both ISO 27001 and SOC 2 audits tend to ask for it, for a simple reason: a policy nobody has seen does not control anything.</p>
+
+<p><em>This article summarises common practice. Your auditor's request list is the authority for your audit &mdash; read it first.</em></p>
+
+<h2>ISO 27001:2022</h2>
+
+<p>Annex A control <strong>5.1, Policies for information security</strong>, is widely summarised as requiring that policies be defined, approved by management, published, <strong>communicated to and acknowledged by relevant personnel and relevant interested parties</strong>, and reviewed at planned intervals and when significant changes occur.</p>
+
+<p><strong>We have not checked this against the official text</strong>, which is in the standard itself and is paid; the summary above is how practitioners describe it (for example <a href="https://hightable.io/iso-27001-annex-a-5-1-policies">High Table</a> and <a href="https://www.tcsa.in/frameworks/iso-27001/controls/5-1-policies-for-information-security">TCSA</a>). If you hold a copy of ISO/IEC 27001:2022 or 27002:2022, read control 5.1 there.</p>
+
+<p>If that summary is right, two words in it are worth thinking about when you plan your evidence:</p>
+
+<ul>
+  <li><strong>Acknowledged</strong> &mdash; not just published. A policy on an intranet page is published; whether it has been acknowledged is a separate question.</li>
+  <li><strong>Reviewed &hellip; when significant changes occur</strong> &mdash; after a change, earlier acknowledgements refer to a version that has been replaced. Many teams therefore collect acknowledgements again for the new version. That is a common practice and a judgement call for your ISMS, not something we can say the control requires.</li>
+</ul>
+
+<p>Control <strong>6.3, Information security awareness, education and training</strong>, is related: policies are expected to be part of the awareness programme.</p>
+
+<h2>SOC 2</h2>
+
+<p>SOC 2 reports are built on the AICPA Trust Services Criteria, and the criteria describe outcomes, not forms. Nothing below is a requirement quoted from them.</p>
+
+<p>What practitioner guides describe is a <strong>common practice</strong>: policy and code of conduct acknowledgements are often used as evidence for the control environment criteria (<strong>CC1.1</strong>, commitment to integrity and ethical values) and internal communication (<strong>CC2.2</strong>), typically collected <strong>at hire</strong> and <strong>annually</strong> after that (for example <a href="https://creately.com/process/soc2/code-of-conduct/">Creately's SOC 2 code of conduct process</a> and <a href="https://watchdogsecurity.io/soc2/demonstrate-commitment-to-integrity-and-ethical-values">Watchdog Security on CC1.1</a>). Guides differ on the details &mdash; some describe only annual signing.</p>
+
+<p>Whether your auditor tests acknowledgements at all, and on what cadence, is set by your own controls and your auditor's request list (often called the PBC list). Check it before building a process.</p>
+
+<h2>What a defensible attestation record contains</h2>
+
+<p>Whatever the framework, the same questions come up when an auditor samples a policy:</p>
+
+<table>
+<thead><tr><th>Question the auditor asks</th><th>Field you need</th></tr></thead>
+<tbody>
+<tr><td>Who acknowledged it?</td><td>A named person</td></tr>
+<tr><td>Which version did they acknowledge?</td><td>The document version at the time</td></tr>
+<tr><td>When?</td><td>A system timestamp</td></tr>
+<tr><td>Who was required to?</td><td>The audience &mdash; to show coverage, not just a list of names</td></tr>
+<tr><td>What happened when the policy changed?</td><td>A new round, with the earlier one kept</td></tr>
+</tbody>
+</table>
+
+<p>A common gap: a list of names with no audience. It proves that <em>some</em> people acknowledged, but not that <em>everyone who should have</em> did &mdash; and coverage is usually what gets sampled.</p>
+
+<h2>Keeping attestation records in Confluence</h2>
+
+<p>Many teams already keep their ISMS policies in Confluence. Confluence has no built-in acknowledgement step, and page view analytics are not an attestation (<a href="/guides/who-viewed-a-confluence-page/">why</a>). The options are a manual table on each page, an external form linked from the page, or a Marketplace app.</p>
+
+<p>We make <strong><a href="https://marketplace.atlassian.com/apps/948129892/confirm-chase-mandatory-reading-policy-attestation">Confirm &amp; Chase</a></strong> for this. You add a confirmation button to each policy page and pick the group that must confirm. One dashboard shows who confirmed and who is outstanding across every space, which is the coverage view an auditor samples. When a policy changes, a new round starts and the earlier round stays on record. The CSV export contains page, policy version, round, audience, person, status and timestamp.</p>
+
+<p>It runs on Atlassian Forge with read-only access to your content, so it adds no new place where your policy text is stored. Free for up to 10 users.</p>
+
+<p><em>Paperlatch makes Confirm &amp; Chase. Using it does not make you compliant with ISO 27001 or SOC 2 &mdash; it produces one kind of evidence those audits ask for.</em></p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Paperlatch</a>
+  <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+  <a href="/page-history-evidence/">Page History &amp; Audit Log</a>
+  <a href="/security/">Security</a>
+</footer>
+
+</div>
+</body>
+</html>

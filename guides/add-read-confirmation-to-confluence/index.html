@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to add read confirmation to Confluence pages</title>
+<meta name="description" content="Confluence has no built-in read confirmation. Here are the options — a manual table, a form, or a Marketplace app — and a checklist for choosing an app.">
+<link rel="canonical" href="https://paperlatch.com/guides/add-read-confirmation-to-confluence/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paperlatch.com/guides/add-read-confirmation-to-confluence/">
+<meta property="og:title" content="How to add read confirmation to Confluence pages">
+<meta property="og:description" content="Confluence has no built-in read confirmation. Here are the options — a manual table, a form, or a Marketplace app — and a checklist for choosing an app.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-history-evidence/">Page History</a>
+    <a href="/confirm-and-chase/support/">Support</a>
+    <a href="/confirm-and-chase/privacy/">Privacy</a>
+    <a href="/confirm-and-chase/terms/">Terms</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>How to add read confirmation to Confluence pages</h1>
+<p class="updated">Guide &middot; Checked against Atlassian's documentation on 20 October 2026</p>
+
+<p><strong>Confluence Cloud has no built-in read confirmation</strong> &mdash; no native button that lets every reader say "I have read this", with a report of who has and hasn't. Two built-in features come close, on Premium and Enterprise only:</p>
+
+<ul>
+  <li><strong>Page analytics</strong> shows who <em>viewed</em> a page &mdash; which is a different thing (<a href="/guides/who-viewed-a-confluence-page/">more on that</a>).</li>
+  <li><strong>Approvals</strong> let you ask named people for a formal sign-off on a page, with Approve or Request changes, comments and an activity log (<a href="https://support.atlassian.com/confluence-cloud/docs/request-and-manage-approvals-in-confluence/">Atlassian: request and manage approvals</a>). If you need a handful of named people to sign off a policy and you are on Premium, try this first &mdash; it costs nothing extra. Its limits for <em>read confirmation</em>: everyone who responds needs <strong>edit</strong> permission on the page, and a space can require at most five approvers, so it does not fit "all 200 employees must confirm they have read the security policy".</li>
+</ul>
+
+<p>So for read confirmation across a wider audience, you have three options.</p>
+
+<h2>Option 1: a table on the page (free, manual)</h2>
+
+<p>Add a two-column table at the bottom of the page &mdash; <em>Name</em> and <em>Date</em> &mdash; and ask readers to add a row.</p>
+
+<ul>
+  <li>&#9989; Works today, on any plan.</li>
+  <li>&#10060; Anyone with edit rights can change anyone else's row.</li>
+  <li>&#10060; Readers need edit permission on the page, which you may not want to give.</li>
+  <li>&#10060; Nothing tells you who is missing, and the table does not know when the page changes.</li>
+</ul>
+
+<p>Fine for a team of five. Not something to show an auditor.</p>
+
+<h2>Option 2: an external form (free or cheap, manual matching)</h2>
+
+<p>Link a Microsoft Forms or Google Forms acknowledgement from the page.</p>
+
+<ul>
+  <li>&#9989; Reliable names and timestamps.</li>
+  <li>&#10060; The form does not know which version of the page someone read.</li>
+  <li>&#10060; You build the "who hasn't confirmed" list by hand, by comparing the responses with a group.</li>
+</ul>
+
+<h2>Option 3: a Marketplace app (paid above small teams)</h2>
+
+<p>A read confirmation app adds a button to the page and keeps the record for you. Several exist. By installs on Confluence Cloud (Atlassian Marketplace, 20 October 2026), the most established are <strong>QC Read and Understood</strong> and <strong>Comala Read Confirmations</strong>, with a handful of newer ones.</p>
+
+<h3>A checklist for choosing one</h3>
+
+<p>These are the questions that separate the apps, and you can answer most of them from each Marketplace listing without installing anything:</p>
+
+<ol>
+  <li><strong>Can you set an audience?</strong> You want a group that <em>must</em> confirm, so the app can list who hasn't &mdash; not just a list of who did.</li>
+  <li><strong>Is the record tied to a page version?</strong> When the page changes, earlier confirmations should be kept, and a new round should start.</li>
+  <li><strong>Is there one report across spaces?</strong> If you have policies in several spaces, a per-page view means opening every page before an audit.</li>
+  <li><strong>What permissions does it ask for?</strong> Open the <strong>Privacy &amp; Security</strong> and <strong>Permissions</strong> tabs on the listing. Look for write access to your content, acting on a user's behalf, and access to email addresses &mdash; and ask whether a read confirmation tool needs them.</li>
+  <li><strong>Where does the data live?</strong> Look for the <em>Runs on Atlassian</em> badge, which Atlassian gives to Forge apps that meet its conditions for keeping data on Atlassian's platform (<a href="https://developer.atlassian.com/platform/marketplace/runs-on-atlassian/">details</a>). An app without the badge is not necessarily storing data elsewhere &mdash; Forge apps can use Atlassian's storage or the vendor's &mdash; so read each listing's <strong>Privacy &amp; Security</strong> tab for where its data is kept.</li>
+  <li><strong>What does it cost at your size?</strong> Most are free for up to 10 users. Above that, prices differ a lot &mdash; compare at your actual user count on each listing's pricing tab.</li>
+</ol>
+
+<h3>Where Confirm &amp; Chase fits</h3>
+
+<p>We make <strong><a href="https://marketplace.atlassian.com/apps/948129892/confirm-chase-mandatory-reading-policy-attestation">Confirm &amp; Chase</a></strong>, so take this as the vendor's description, checked against the list above:</p>
+
+<ol>
+  <li>Yes &mdash; you pick the group that must confirm, and the <em>Not confirmed</em> tab lists who hasn't.</li>
+  <li>Yes &mdash; a new version starts a new round; earlier rounds stay in the record and the CSV.</li>
+  <li>Yes &mdash; one dashboard across every space.</li>
+  <li>Read-only access to pages, users, groups and content permissions. No write access to your content, no acting on a user's behalf, and email addresses are never read or stored.</li>
+  <li>Runs on Atlassian Forge.</li>
+  <li>Free for up to 10 users.</li>
+</ol>
+
+<h2>Setting it up (Confirm &amp; Chase)</h2>
+
+<ol>
+  <li>Install it from the <a href="https://marketplace.atlassian.com/apps/948129892/confirm-chase-mandatory-reading-policy-attestation">Marketplace listing</a>.</li>
+  <li>Edit the policy page and insert the <strong>Confirm &amp; Chase</strong> macro.</li>
+  <li>In the macro settings, pick the group that must confirm. Save, and publish the page.</li>
+  <li>Readers see an <strong>I have read and understood</strong> button.</li>
+  <li>Open the global <strong>Policy compliance</strong> page (from the Apps menu) to see who has confirmed and who is outstanding, and export the CSV when you need it.</li>
+</ol>
+
+<p><em>Paperlatch makes Confirm &amp; Chase.</em></p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Paperlatch</a>
+  <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+  <a href="/page-history-evidence/">Page History &amp; Audit Log</a>
+  <a href="/security/">Security</a>
+</footer>
+
+</div>
+</body>
+</html>
