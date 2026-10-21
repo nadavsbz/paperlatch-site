@@ -21,7 +21,7 @@
   <a class="name" href="/">Paperlatch</a>
   <nav>
     <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
-    <a href="/page-history-evidence/">Page History</a>
+    <a href="/page-approval/">Page Approval</a>
     <a href="/confirm-and-chase/support/">Support</a>
     <a href="/confirm-and-chase/privacy/">Privacy</a>
     <a href="/confirm-and-chase/terms/">Terms</a>
@@ -85,7 +85,8 @@
 <!-- /GEN -->
 <p>
   Five of those are read-only. <code>storage:app</code> is the one write capability, and it
-  reaches only the app's own storage described above. The app has
+  reaches only the app's own storage described above. <code>report:personal-data</code> lets the
+  app send Atlassian the account IDs it holds, and nothing else. The app has
   <strong>no permission to write to your Confluence content</strong>, does not act on behalf
   of any user, and never reads or stores email addresses. The user-read permission it does
   hold covers profile information that includes an email address; the app does not read that

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Page Approval &amp; Document Sign-off for Confluence</title>
+<meta name="description" content="What Page Approval for Confluence stores and reads: approvers, approval decisions and their history, all inside your own Atlassian site.">
+<link rel="canonical" href="https://paperlatch.com/page-approval/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paperlatch.com/page-approval/privacy/">
+<meta property="og:title" content="Privacy Policy — Page Approval &amp; Document Sign-off for Confluence">
+<meta property="og:description" content="Stored inside your own Atlassian site. We operate no server and have no access to it.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-approval/">Page Approval</a>
+    <a href="/page-approval/support/">Support</a>
+    <a href="/page-approval/privacy/">Privacy</a>
+    <a href="/page-approval/terms/">Terms</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>Privacy Policy</h1>
+<p class="updated">Page Approval &amp; Document Sign-off for Confluence &middot; Last updated 21 October 2026</p>
+
+<div class="note">
+  <p>
+    <strong>The short version.</strong> The app runs on Atlassian Forge and stores its data in
+    Atlassian's own app storage, inside your Atlassian cloud site. We operate no server, so no
+    data about you or your users is transmitted to us or to any third party.
+  </p>
+</div>
+
+<h2>What the app stores</h2>
+<p>For each approval decision, one record:</p>
+<table>
+  <thead><tr><th>Data</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>The approver's Atlassian account ID and display name at the moment of deciding</td><td>To show who decided</td></tr>
+    <tr><td>The decision (approved or rejected) and, for a rejection, the comment the approver wrote</td><td>A rejection must say why</td></tr>
+    <tr><td>The date and time, in UTC, from the server</td><td>To show when</td></tr>
+    <tr><td>The page ID, the version number, and a SHA-256 hash of that version's title and body</td><td>To bind the decision to exactly what was approved</td></tr>
+    <tr><td>Whether the approver was the author of that version</td><td>So that a self-approval is visible</td></tr>
+    <tr><td>The approvers and the rule (everyone / one is enough) in force at that moment</td><td>So the decision can be read later in its context</td></tr>
+    <tr><td>Salted hashes of the approver's identity, a hash of the decision, and the hash of the one before it on the same page</td><td>So that a removed or altered decision is detectable</td></tr>
+  </tbody>
+</table>
+<p>
+  The app also stores, for each page, <strong>every setting of its approvers</strong>: the approvers'
+  account IDs, the rule, and the account ID and display name of the person who set them, with the time.
+  Settings are added, never overwritten.
+</p>
+<p>
+  <strong>The app does not store the content of your pages.</strong> It stores a hash of the decided
+  version &mdash; a fingerprint from which the text cannot be recovered. It stores no email addresses,
+  no IP addresses and no usage analytics.
+</p>
+
+<h2>What the app reads but does not store</h2>
+<p>
+  When a page with the macro is opened, the app asks Confluence whether the viewer may read that page,
+  and reads the page's current version to show its approval status. When approvers are chosen, it asks
+  Confluence whether each of them can read the page. It reads display names and page titles to make the
+  screens readable. None of this is written to storage.
+</p>
+
+<h2>Where the data lives</h2>
+<p>
+  In Atlassian Forge app storage, within your own Atlassian cloud site and subject to the data
+  residency that applies to that site. It is never transmitted to us or to any third party, and we
+  have no facility to read it or connect to it. <strong>It leaves Atlassian only when one of your users
+  exports it</strong> &mdash; the CSV downloads save approver names, account IDs, decisions and comments
+  to that person's computer.
+</p>
+
+<h2>Permissions the app requests</h2>
+<!-- GEN:scopes:page-approval -->
+<ul>
+  <li><code>storage:app</code> &mdash; to store approvers, approval decisions and the audit trail</li>
+  <li><code>report:personal-data</code> &mdash; to tell Atlassian once every reporting cycle which accounts the app holds data for, so that the identity of a closed account is erased</li>
+  <li><code>read:content.permission:confluence</code> &mdash; to ask Confluence whether you are allowed to see a page before the app shows you anything about it, and whether an approver can read the page they are asked to approve</li>
+  <li><code>read:user:confluence</code> &mdash; to show display names</li>
+  <li><code>read:confluence-user</code> &mdash; to identify the person approving</li>
+  <li><code>read:page:confluence</code> &mdash; to bind each decision to the exact page version and its content</li>
+</ul>
+<!-- /GEN -->
+<p>
+  <strong>The app holds no write permission to Confluence.</strong> It never creates, edits, restricts or
+  deletes a page. Atlassian's description of the user permission mentions email addresses; the app does
+  not read or store them.
+</p>
+
+<h2>Retention and deletion</h2>
+<p>
+  Decisions and approver settings are kept for as long as the app is installed. The app has no function
+  that deletes a decision: an approval that could be quietly removed would not be evidence.
+</p>
+<p>
+  When the app is uninstalled, <strong>Atlassian retains the app's storage for 28 days</strong>.
+  <strong>Reinstalling the app does not restore it automatically.</strong> If you reinstall and need the
+  earlier records, email us within <strong>21 days of uninstalling</strong>: with your consent, we ask
+  Atlassian to re-link the previous installation's data to the new one. After that window the data is
+  gone, so if your records must be kept, export them before uninstalling. These periods are Atlassian's
+  retention schedule for Forge storage
+  (<a href="https://developer.atlassian.com/platform/forge/storage-reference/">Forge storage reference</a>),
+  not ours.
+</p>
+
+<h2>Your users' rights</h2>
+<p>
+  The stored personal data is a display name, an Atlassian account ID, timestamps and any rejection
+  comment, attached to the decisions a person made and the approver settings they changed. As the
+  operator of your Confluence site you are the controller of that data.
+</p>
+<p>
+  <strong>Closed Atlassian accounts.</strong> Once every reporting cycle (7 days, or the period Atlassian
+  sets; a failed report is retried the next day) the app reports the account IDs it holds data for to
+  Atlassian, using Atlassian's
+  <a href="https://developer.atlassian.com/platform/forge/user-privacy-guidelines/">personal data
+  reporting</a>. When Atlassian answers that an account has been closed, the app <strong>erases that
+  person's identity from every decision</strong> &mdash; account ID and name &mdash; and replaces their
+  account ID in every list of approvers, and as the person who set approvers, with an anonymous
+  &ldquo;closed account&rdquo; marker. The decisions themselves stay: what was decided, when, and on which
+  version. Each decision binds to a salted hash of the identity rather than the identity itself, so
+  erasing it does not break the record, and the hash cannot be traced back to the person.
+  A page whose current approvers include a closed account cannot be approved under &ldquo;everyone must
+  approve&rdquo; until someone who can edit it changes the approvers; the page says so.
+  If your procedures need the approvers' names after an account is closed, export the record before the
+  account is closed.
+</p>
+<p>
+  <strong>Updated profiles.</strong> When Atlassian answers that a person's profile has changed, the
+  app erases its stored copy of their name as the person who set approvers; the screens show names
+  live from Atlassian. The name <em>inside a decision</em> is not changed: it is part of the record of
+  who decided, and is erased only when the account is closed. If the person's name has changed since,
+  their current name is shown beside it, marked &ldquo;now:&rdquo;. It is read from Atlassian each time
+  it is shown, and never stored by the app.
+</p>
+<p>
+  For any other erasure request about an active account, there is no in-app way to remove one person's
+  decisions &mdash; that would remove evidence other people rely on &mdash; and we cannot act on such a
+  request on your behalf, because we have no access to the data.
+</p>
+
+<h2>The Marketplace listing page</h2>
+<p>
+  The app's listing page on the Atlassian Marketplace is operated by Atlassian, not by us.
+  Atlassian permits partners to attach a Google Analytics measurement ID to their listing page,
+  and we may do so in order to see how many people view the listing. That measurement applies only to
+  the listing page on Atlassian's site. <strong>There is no analytics of any kind inside the app.</strong>
+</p>
+
+<h2>Changes</h2>
+<p>
+  If this policy changes in a way that affects what is stored or who can reach it, the change will
+  be described here with a new date above, and material changes will be noted in the app's release
+  notes on the Marketplace.
+</p>
+
+<h2>Contact</h2>
+<p>
+  <a href="mailto:support@paperlatch.com">support@paperlatch.com</a>. For a suspected
+  vulnerability, see <a href="/security/">our security policy</a>.
+</p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Paperlatch</a>
+  <a href="/page-approval/support/">Support</a>
+  <a href="/page-approval/terms/">Terms</a>
+  <a href="/security/">Security</a>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation and Support — Page Approval &amp; Document Sign-off for Confluence</title>
+<meta name="description" content="How to set approvers on a Confluence page, approve or reject a version, see what is waiting, and export the approval record.">
+<link rel="canonical" href="https://paperlatch.com/page-approval/support/">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-approval/">Page Approval</a>
+    <a href="/page-approval/support/">Support</a>
+    <a href="/page-approval/privacy/">Privacy</a>
+    <a href="/page-approval/terms/">Terms</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>Documentation and support</h1>
+<p class="lead">
+  Page Approval &amp; Document Sign-off for Confluence &mdash; setting approvers, deciding on a page,
+  and reading the record.
+</p>
+
+<h2>Getting started</h2>
+<ol>
+  <li><strong>Add the macro.</strong> Edit the page, insert the <em>Page Approval</em> macro, and publish
+      the page.</li>
+  <li><strong>Set approvers.</strong> On the published page, select <em>Set approvers</em>. Choose up to 20
+      people and the rule: <strong>everyone must approve</strong>, or <strong>one approval is
+      enough</strong>. Only people who can edit the page can do this.</li>
+  <li><strong>Approvers decide.</strong> Each approver opens the page and selects <em>Approve</em>, or
+      <em>Reject</em> and writes why (up to 500 characters).</li>
+  <li><strong>See the status.</strong> The page shows each approver's decision, with the time and any
+      comment, and who has not decided yet.</li>
+</ol>
+
+<h2>Who can be an approver</h2>
+<p>
+  Anyone who can <strong>read</strong> the page. Approvers do not need edit rights. When approvers are
+  set, the app asks Confluence whether each person can read the page, and refuses anyone who cannot,
+  naming them, so that nobody is asked to approve a page they cannot see.
+</p>
+<p>
+  An author can approve their own page. The decision is then marked <em>(page author)</em>, so a
+  self-approval is visible.
+</p>
+
+<h2>Decisions and page versions</h2>
+<p>
+  A decision applies to exactly one version of the page &mdash; its title and body in Confluence storage
+  format, identified by a SHA-256 hash. <strong>Attachments, comments and labels are not part of the
+  approved content.</strong>
+</p>
+<p>
+  When the page is edited, the page shows <em>Changed since approval</em>, with the version that was
+  approved. Earlier decisions stay on record; approvers decide again on the new version. A person can
+  decide only on the version they are looking at: if the page changes while they are deciding, the
+  decision is refused and they are asked to reload.
+</p>
+<p>
+  <strong>The app does not lock the page.</strong> It cannot stop an edit; it shows one.
+</p>
+
+<h2>Changing approvers</h2>
+<p>
+  Every change to the approvers or the rule is kept, with who made it and when, and the page shows who
+  last set them. Decisions by people who are no longer approvers stay on record but are not counted.
+</p>
+
+<h2>What is waiting for me</h2>
+<p>
+  Open <em>Page Approval</em> from the Apps menu in Confluence:
+</p>
+<ul>
+  <li><strong>Waiting for me</strong> &mdash; pages where you are an approver and have not decided on the
+      current version.</li>
+  <li><strong>All pages</strong> &mdash; every page with approvers, its status and who has not decided,
+      with <em>Download CSV</em>.</li>
+  <li><strong>Audit trail</strong> (Confluence administrators) &mdash; every decision and every change of
+      approvers, with <em>Download CSV</em>.</li>
+</ul>
+<p>
+  Each list shows only pages you are allowed to read. <strong>The app does not send email or
+  notifications</strong> &mdash; tell approvers where to look.
+</p>
+
+<h2>Checking the record</h2>
+<p>
+  Every decision carries the hash of the decision before it on the same page. A page whose record has a
+  decision missing or altered is marked <strong>Record has problems</strong>, and the CSV export writes
+  the problem into the file. <strong>The check detects a change; it does not prevent one.</strong> Treat a
+  reported problem as something to investigate before relying on the record.
+</p>
+
+<h2>Exports</h2>
+<p>
+  The CSV files carry names, account IDs, decisions, comments, times, versions and hashes. A cell that
+  would start with <code>=</code>, <code>+</code>, <code>-</code> or <code>@</code> is written so that Excel
+  shows it as text instead of running it as a formula.
+</p>
+
+<h2>Contact</h2>
+<p>
+  Email <a href="mailto:support@paperlatch.com">support@paperlatch.com</a> with your site URL (for example
+  <code>yourcompany.atlassian.net</code>), what you expected, what happened, and the page ID if a specific
+  page is involved. Response times are in our <a href="/support-policy/">support policy</a>.
+</p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Paperlatch</a>
+  <a href="/page-approval/privacy/">Privacy</a>
+  <a href="/page-approval/terms/">Terms</a>
+  <a href="/security/">Security</a>
+</footer>
+
+</div>
+</body>
+</html>

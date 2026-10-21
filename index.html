@@ -23,7 +23,7 @@
   <a class="name" href="/">Paperlatch</a>
   <nav>
     <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
-    <a href="/page-history-evidence/">Page History</a>
+    <a href="/page-approval/">Page Approval</a>
     <a href="/confirm-and-chase/support/">Support</a>
     <a href="/confirm-and-chase/privacy/">Privacy</a>
     <a href="/confirm-and-chase/terms/">Terms</a>
@@ -54,15 +54,14 @@
 </div>
 
 <div class="card">
-  <h3><a href="/page-history-evidence/">Page&nbsp;History &amp; Audit&nbsp;Log</a></h3>
+  <h3><a href="/page-approval/">Page&nbsp;Approval &amp; Document&nbsp;Sign-off</a></h3>
   <p>
-    A content-level audit log for Confluence. Confluence's own audit log does not record
-    content edits or moves &mdash; this one does: page history including moves between
-    spaces, deleted pages and trash details, and attachment history, with an evidence pack
-    you can export. When it cannot record something, it says so, instead of looking
-    complete.
+    Document approval for Confluence. Approvers approve or reject the exact page version
+    they read; when the page is edited, it shows that it is no longer approved, and the
+    earlier decisions stay on record. One list of what is waiting, with a CSV export.
+    Approvers need only read access.
   </p>
-  <p><a href="/page-history-evidence/">What it records, and what it does not &rarr;</a></p>
+  <p><a href="/page-approval/">How it works, and what it does not do &rarr;</a></p>
 </div>
 
 <figure>
@@ -87,21 +86,13 @@
   <li>Runs on Atlassian Forge, inside Atlassian</li>
   <li>No application server of ours, and no external storage of your page content</li>
   <li>Neither app writes to your content. Each stores only its own records &mdash;
-      confirmations in one, an event history in the other</li>
+      confirmations in one, approval decisions in the other</li>
   <li>No acting on a user's behalf</li>
   <li>No advertising and no behavioural analytics in either app</li>
 </ul>
 <p>
   Every one of those is checkable on the Permissions tab of a Marketplace listing, which is
   the point of stating them this way rather than asking you to take our word for it.
-</p>
-<p>
-  One honest footnote, because you will see it on that tab:
-  <a href="/page-history-evidence/">Page History &amp; Audit Log</a> requests a write scope
-  it never uses. Atlassian requires it in order to <em>deliver</em> page deletion events to
-  a Forge app &mdash; a condition for receiving the notification, not for performing an
-  action. <a href="/page-history-evidence/#permissions">The reasoning is set out in full</a>
-  on that app's page.
 </p>
 <p>
   <a href="/confirm-and-chase/privacy/">The privacy policy</a> lists exactly what is stored.

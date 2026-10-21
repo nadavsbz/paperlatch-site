@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Approval &amp; Document Sign-off for Confluence</title>
+<meta name="description" content="Document approval for Confluence: approvers decide on the exact page version they read, and an edited page shows it is no longer approved. Runs on Forge.">
+<link rel="canonical" href="https://paperlatch.com/page-approval/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paperlatch.com/page-approval/">
+<meta property="og:title" content="Page Approval &amp; Document Sign-off for Confluence">
+<meta property="og:description" content="Approvals bound to the page version. An edit is never approved by accident.">
+<meta property="og:image" content="https://paperlatch.com/assets/logo-512.png">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="/assets/logo.png" alt="">
+  <a class="name" href="/">Paperlatch</a>
+  <nav>
+    <a href="/confirm-and-chase/">Confirm &amp; Chase</a>
+    <a href="/page-approval/">Page Approval</a>
+    <a href="/page-approval/support/">Support</a>
+    <a href="/page-approval/privacy/">Privacy</a>
+    <a href="/page-approval/terms/">Terms</a>
+    <a href="/security/">Security</a>
+  </nav>
+</header>
+
+<h1>Page approval and document sign-off for Confluence</h1>
+<p class="lead">
+  Approvers approve or reject the exact page version they read. When the page is edited, it shows
+  that it is no longer approved.
+</p>
+
+<!-- GEN:cta:page-approval -->
+<p><em>Page Approval & Document Sign-off for Confluence is in Atlassian Marketplace review. The listing link will appear here once it is approved.</em></p>
+<!-- /GEN -->
+
+<h2>How it works</h2>
+<ol>
+  <li>Insert the <em>Page Approval</em> macro on a page.</li>
+  <li>Anyone who can edit the page chooses up to 20 approvers, and whether <strong>everyone</strong>
+      must approve or <strong>one approval is enough</strong>.</li>
+  <li>Each approver opens the page and selects <em>Approve</em>, or <em>Reject</em> with a comment
+      saying why.</li>
+  <li>The page shows who has approved, who rejected and why, and who has not decided yet.</li>
+</ol>
+
+<h2>Bound to the version</h2>
+<p>
+  A decision applies to one page version: its title and body, identified by a SHA-256 hash. When the
+  page is edited, earlier decisions stay on record and the page shows <strong>Changed since
+  approval</strong>: which version was approved, and that the current one is not. If the page changes
+  while an approver is deciding, the decision is refused and they are asked to reload.
+  Attachments, comments and labels are not part of the approved content, and the app says so.
+</p>
+
+<h2>Approvers need only read access</h2>
+<p>
+  An approver needs to be able to read the page, not edit it. The app checks this when approvers are
+  chosen and refuses a person who cannot see the page. Every change to the approvers is kept, with who
+  made it and when, and shown on the page &mdash; so an approver who rejected cannot be quietly removed.
+</p>
+
+<h2>One list of what is waiting</h2>
+<p>
+  From the Apps menu, <em>Page Approval</em> shows the pages waiting for your decision and every page
+  with approvers, with its status and who has not decided. Both export as CSV. Confluence administrators
+  also see the full audit trail. Each page lists only what you are allowed to read.
+</p>
+
+<h2>A record that can be checked</h2>
+<p>
+  Each decision records the person, the time, the page version and the content hash, and carries the
+  hash of the decision before it on the same page. A page whose record has been altered or has a
+  decision missing is marked <strong>Record has problems</strong>. <strong>The check detects a change;
+  it does not prevent one.</strong>
+</p>
+
+<h2>What it does not do</h2>
+<ul>
+  <li><strong>It does not lock the page.</strong> Editing is not blocked; the edit is shown.</li>
+  <li><strong>It does not send email or notifications.</strong> Approvers see what is waiting for them on
+      the app's page.</li>
+  <li><strong>It is not a regulated electronic signature</strong> (no signing PIN, no approved list of
+      signers).</li>
+</ul>
+
+<h2>Read-only, on Atlassian Forge</h2>
+<p>
+  The app reads pages, users and content permissions, and keeps its records in Atlassian's app storage
+  inside your site. It does not write to your Confluence, does not act on a user's behalf, and never reads
+  or stores email addresses. There is no server of ours. See the <a href="/page-approval/privacy/">privacy
+  policy</a> for exactly what is stored.
+</p>
+
+<footer>
+  <span>&copy; 2026 Paperlatch</span>
+  <a href="/">Paperlatch</a>
+  <a href="/page-approval/support/">Support</a>
+  <a href="/page-approval/privacy/">Privacy</a>
+  <a href="/page-approval/terms/">Terms</a>
+  <a href="/security/">Security</a>
+</footer>
+
+</div>
+</body>
+</html>
