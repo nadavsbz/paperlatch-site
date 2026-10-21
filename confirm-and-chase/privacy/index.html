@@ -30,7 +30,7 @@
 </header>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Confirm &amp; Chase for Confluence &middot; Last updated 22 September 2026</p>
+<p class="updated">Confirm &amp; Chase for Confluence &middot; Last updated 20 October 2026</p>
 
 <div class="note">
   <p>
@@ -80,6 +80,7 @@
   <li><code>read:user:confluence</code> &mdash; to show display names</li>
   <li><code>read:group:confluence</code> &mdash; to determine the audience</li>
   <li><code>read:content.permission:confluence</code> &mdash; to ask Confluence whether you are allowed to see a page before the app tells you anything about it</li>
+  <li><code>report:personal-data</code> &mdash; to tell Atlassian once every reporting cycle which accounts the app holds confirmations for, so that confirmations of closed accounts are erased</li>
 </ul>
 <!-- /GEN -->
 <p>
@@ -107,11 +108,20 @@
 <h2>Your users' rights</h2>
 <p>
   The stored personal data is an Atlassian account ID and a timestamp. As the operator of your
-  Confluence site you are the controller of that data. If a data subject asks you to erase their
-  confirmations, a site administrator can do so by uninstalling the app &mdash; subject to the
-  28-day retention window above. <strong>There is no way to erase one person's records without
-  removing the app</strong>, and we cannot act on such a request on your behalf, because we have
-  no access to the data.</p>
+  Confluence site you are the controller of that data.</p>
+<p>
+  <strong>Closed Atlassian accounts.</strong> Once every reporting cycle (7 days, or the period Atlassian sets; a failed report is retried the next day) the app reports the account IDs it holds
+  confirmations for to Atlassian, using Atlassian's
+  <a href="https://developer.atlassian.com/platform/forge/user-privacy-guidelines/">personal data
+  reporting</a>. When Atlassian answers that an account has been closed, the app deletes every
+  confirmation by that account, on every page and in every round. From then on the report shows that
+  person as not having confirmed. If you need those confirmations as evidence, export the CSV before the
+  account is closed.</p>
+<p>
+  For any other erasure request, a site administrator can uninstall the app &mdash; subject to the
+  28-day retention window above. <strong>There is no in-app way to erase one active person's
+  records</strong>, and we cannot act on such a request on your behalf, because we have no access to
+  the data.</p>
 <p>
   We would rather say that plainly than imply a capability that does not exist.
 </p>
